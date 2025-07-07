@@ -78,3 +78,6 @@ Este proyecto está protegido por derechos de autor © 2025 **Ismael Ruge Gonzal
 
 ## Proyecto Github
 Código https://github.com/ismaelruge/IsmaelRuge.github.io
+
+## Roadmap
+https://roadmap.sh/projects/single-page-cv
