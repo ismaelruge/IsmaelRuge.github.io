@@ -73,3 +73,8 @@ Mi enfoque está en la calidad del software, la escalabilidad, el rendimiento y 
 ## 📝 Licencia
 
 Este proyecto está protegido por derechos de autor © 2025 **Ismael Ruge Gonzalez**. Todos los derechos reservados.
+
+---
+
+## Proyecto Github
+Código https://github.com/ismaelruge/IsmaelRuge.github.io
