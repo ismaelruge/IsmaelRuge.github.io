@@ -461,6 +461,34 @@ section.visible {
 /* ========================================
    CERTIFICACIONES
    ======================================== */
+.certifications-container {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: var(--spacing-sm);
+    /* Estilos del scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--bg-tertiary);
+}
+
+/* Scrollbar personalizado para Webkit (Chrome, Safari, Edge) */
+.certifications-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.certifications-container::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+.certifications-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--radius-sm);
+}
+
+.certifications-container::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
 .certifications-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -745,6 +773,11 @@ footer {
     .form-group input,
     .form-group textarea {
         font-size: 0.95rem;
+    }
+
+    /* Contenedor de certificaciones más compacto en móvil */
+    .certifications-container {
+        max-height: 400px;
     }
 
     /* Sección título más pequeña */
