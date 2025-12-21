@@ -56,14 +56,16 @@ function updateThemeIcon(theme) {
 // ========================================
 function initScrollAnimations() {
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05, // Reducido para mejor detección en móviles
+        rootMargin: '0px 0px -20px 0px' // Reducido para móviles
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                // Dejar de observar una vez que se agregó la clase visible
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
