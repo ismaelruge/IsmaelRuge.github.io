@@ -496,22 +496,13 @@ section.visible {
    HABILIDADES
    ======================================== */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-md);
-}
-
-.skill-category h4 {
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-sm);
-    font-size: 1.1rem;
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    flex-direction: column;
 }
 
 .skill-category ul {
     list-style: none;
+    padding: 0 1.25rem 1.25rem;
 }
 
 .skill-category li {
@@ -1090,7 +1081,6 @@ footer {
         left: calc(-1 * var(--spacing-md) - 6px);
     }
 
-    .skills-grid,
     .objectives-grid,
     .certifications-grid,
     .languages-grid {
@@ -1240,7 +1230,6 @@ footer {
         max-width: 900px;
     }
 
-    .skills-grid,
     .certifications-grid {
         grid-template-columns: repeat(2, 1fr);
     }
