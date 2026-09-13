@@ -47,7 +47,7 @@ Portafolio web profesional de Ismael Ruge Gonzalez, Ingeniero de Sistemas y Desa
 - 📄 **Descarga directa del CV** en PDF desde el hero
 - 📧 **Formulario de contacto funcional** (FormSubmit) con campo anti-spam (honeypot)
 - 📊 **Barras de progreso animadas** para idiomas
-- 🗂️ **Certificaciones en acordeón** por categoría, en vez de una lista con scroll interno
+- 🗂️ **Habilidades, Experiencia, Proyectos, Educación y Certificaciones en acordeón**, colapsados por defecto para una lectura más compacta
 - 🎯 **Smooth scroll** entre secciones
 - ⌨️ **Easter egg** con Konami Code
 
@@ -70,7 +70,7 @@ Portafolio web profesional de Ismael Ruge Gonzalez, Ingeniero de Sistemas y Desa
 - Animaciones con `@keyframes`
 - Media queries para 3 breakpoints
 - Intersection Observer API para animaciones y scroll-spy
-- `<details>`/`<summary>` nativos para el acordeón de certificaciones
+- `<details>`/`<summary>` nativos para todos los acordeones (Habilidades, Experiencia, Proyectos, Educación y Certificaciones), usando el atributo `name` para que solo un ítem esté abierto a la vez dentro de cada sección
 
 ### Datos Estructurados y SEO
 - JSON-LD (`schema.org/Person`) para mejorar la aparición en buscadores
@@ -225,10 +225,10 @@ initNavigation();
 1. **Hero** — foto, nombre, título profesional, botones de "Descargar CV" y "Contáctame", contacto y redes sociales.
 2. **Datos clave** — franja con años de experiencia, certificaciones y promedio académico.
 3. **Sobre Mí** — resumen profesional y objetivos.
-4. **Habilidades Técnicas** — 6 categorías (lenguajes, frontend, backend, bases de datos, DevOps/Cloud, seguridad).
-5. **Experiencia Profesional** — Colcan (Desarrollador Senior Backend/Fullstack) y HAS SQL S.A.S.
-6. **Proyectos** — proyectos personales (agendamiento para centro de estética, app Android con OCR/código de barras/voz para tienda de abarrotes).
-7. **Educación** — Ingeniería de Sistemas en Uniremington y proyecto de grado.
+4. **Habilidades Técnicas** — 6 categorías en acordeón (lenguajes, frontend, backend, bases de datos, DevOps/Cloud, seguridad).
+5. **Experiencia Profesional** — Colcan (Desarrollador Senior Backend/Fullstack) y HAS SQL S.A.S, cada una colapsable.
+6. **Proyectos** — proyectos personales en acordeón (agendamiento para centro de estética, app Android con OCR/código de barras/voz para tienda de abarrotes).
+7. **Educación** — Ingeniería de Sistemas en Uniremington y proyecto de grado, cada uno colapsable por separado.
 8. **Certificaciones & Cursos** — 113 certificaciones de Platzi organizadas en un acordeón por categoría.
 9. **Idiomas** — Español (nativo), Inglés (B1).
 10. **Contacto** — formulario funcional con validación y protección anti-spam.
