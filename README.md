@@ -213,6 +213,10 @@ initNavigation();
 <script type="application/ld+json">{ "@type": "Person", ... }</script>
 ```
 
+### Indexación
+- `robots.txt` — permite el rastreo completo y apunta al sitemap
+- `sitemap.xml` — declara la URL principal para los buscadores
+
 ### Performance y Accesibilidad
 - ✅ Sin dependencias externas
 - ✅ CSS y JS minificables
