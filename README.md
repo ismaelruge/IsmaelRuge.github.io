@@ -26,7 +26,7 @@ Portafolio web profesional de Ismael Ruge Gonzalez, Ingeniero de Sistemas y Desa
 ## ✨ Características
 
 ### Información Profesional
-- **Ingeniero de Sistemas** (Corporación Universitaria Remington — graduación 25 de septiembre de 2026)
+- **Ingeniero de Sistemas** graduado (Corporación Universitaria Remington)
 - **4+ años de experiencia** como Desarrollador Fullstack Senior
 - Especialización en **sistemas backend de alta concurrencia** e **interoperabilidad de sistemas médicos**
 - **113 certificaciones en Platzi** y promedio académico de **4.20/5.0**
