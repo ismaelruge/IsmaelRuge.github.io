@@ -1,10 +1,10 @@
 # Ismael Ruge Gonzalez - Portafolio Profesional
 
-Portafolio web profesional de Ismael Ruge Gonzalez, Desarrollador Fullstack Semi-Senior especializado en interoperabilidad de sistemas médicos, optimización de alto rendimiento y desarrollo de soluciones empresariales.
+Portafolio web profesional de Ismael Ruge Gonzalez, Ingeniero de Sistemas y Desarrollador Fullstack Senior especializado en sistemas backend de alta concurrencia, interoperabilidad de sistemas médicos y desarrollo de soluciones empresariales.
 
 [![Live Demo](https://img.shields.io/badge/demo-online-brightgreen.svg)](https://ismaelruge.github.io)
 [![GitHub Pages](https://img.shields.io/badge/hosted-GitHub%20Pages-blue.svg)](https://pages.github.com/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE)
 
 ## 🌐 Demo en Vivo
 
@@ -19,38 +19,42 @@ Portafolio web profesional de Ismael Ruge Gonzalez, Desarrollador Fullstack Semi
 - [Características Técnicas](#-características-técnicas)
 - [Responsive Design](#-responsive-design)
 - [SEO y Optimización](#-seo-y-optimización)
+- [Secciones del Portafolio](#-secciones-del-portafolio)
 - [Contacto](#-contacto)
 - [Licencia](#-licencia)
 
 ## ✨ Características
 
 ### Información Profesional
-- **3+ años de experiencia** como Desarrollador Fullstack Semi-Senior
-- Especialización en **interoperabilidad de sistemas médicos**
-- Sistema optimizado para procesar **+300 resultados por segundo**
-- **Promedio académico 4.20/5.0** (90% de la carrera completada)
-- **113 certificaciones en Platzi**
-- **Proyecto de grado publicado** en repositorio universitario
+- **Ingeniero de Sistemas** (Corporación Universitaria Remington — graduación 25 de septiembre de 2026)
+- **4+ años de experiencia** como Desarrollador Fullstack Senior
+- Especialización en **sistemas backend de alta concurrencia** e **interoperabilidad de sistemas médicos**
+- **113 certificaciones en Platzi** y promedio académico de **4.20/5.0**
+- Proyecto de grado **aprobado**, publicado en el repositorio institucional
 
 ### Diseño Moderno
+- ✅ Navegación fija con scroll-spy (resalta la sección activa) y menú hamburguesa en móvil
 - ✅ Glassmorphism y efectos visuales modernos
 - ✅ Tema claro/oscuro con toggle interactivo
 - ✅ Animaciones suaves al hacer scroll
 - ✅ Diseño 100% responsive (móvil, tablet, desktop)
-- ✅ Gradientes y efectos de hover profesionales
+- ✅ Botón "Volver arriba" y enlace de accesibilidad "Saltar al contenido"
 
 ### Funcionalidades Interactivas
+- 🧭 **Navegación por secciones** con resaltado automático del enlace activo
 - 🔄 **Duración de empleo actualizada automáticamente** (JavaScript)
 - 🌓 **Modo oscuro/claro** con persistencia en localStorage
-- 📧 **Formulario de contacto funcional** (FormSubmit)
+- 📄 **Descarga directa del CV** en PDF desde el hero
+- 📧 **Formulario de contacto funcional** (FormSubmit) con campo anti-spam (honeypot)
 - 📊 **Barras de progreso animadas** para idiomas
+- 🗂️ **Certificaciones en acordeón** por categoría, en vez de una lista con scroll interno
 - 🎯 **Smooth scroll** entre secciones
 - ⌨️ **Easter egg** con Konami Code
 
 ## 🛠️ Tecnologías
 
 ### Frontend
-- HTML5 semántico
+- HTML5 semántico (`<main>`, `<nav>`, landmarks de accesibilidad)
 - CSS3 (Variables CSS, Grid, Flexbox, Animations)
 - JavaScript ES6+ (Vanilla JS)
 
@@ -65,7 +69,13 @@ Portafolio web profesional de Ismael Ruge Gonzalez, Desarrollador Fullstack Semi
 - CSS Variables para theming
 - Animaciones con `@keyframes`
 - Media queries para 3 breakpoints
-- Intersection Observer API para animaciones
+- Intersection Observer API para animaciones y scroll-spy
+- `<details>`/`<summary>` nativos para el acordeón de certificaciones
+
+### Datos Estructurados y SEO
+- JSON-LD (`schema.org/Person`) para mejorar la aparición en buscadores
+- Open Graph y Twitter Cards
+- Favicon SVG propio
 
 ## 📁 Estructura del Proyecto
 
@@ -73,13 +83,16 @@ Portafolio web profesional de Ismael Ruge Gonzalez, Desarrollador Fullstack Semi
 IsmaelRuge.github.io/
 │
 ├── index.html              # Página principal del portafolio
-├── styles.css              # Estilos con sistema de temas y responsive
-├── script.js               # Funcionalidades interactivas
-├── README.md               # Este archivo
+├── styles.css               # Estilos con sistema de temas y responsive
+├── script.js                 # Funcionalidades interactivas
+├── favicon.svg               # Favicon del sitio
+├── LICENSE                   # Licencia MIT (aplica solo al código)
+├── README.md                 # Este archivo
 │
 └── assets/
+    ├── CV-IsmaelRuge.pdf     # Hoja de vida descargable
     └── Images/
-        └── Profile.png     # Foto de perfil
+        └── Profile.png       # Foto de perfil
 ```
 
 ## 🚀 Instalación Local
@@ -127,14 +140,23 @@ localStorage.getItem('theme') // 'light' o 'dark'
 updateJobDuration();
 ```
 
+### Navegación y Scroll-Spy
+```javascript
+// Resalta el enlace del menú correspondiente a la sección visible
+// y controla el menú hamburguesa en móvil
+initNavigation();
+```
+
 ### Formulario de Contacto
 ```html
 <!-- Configurado con FormSubmit -->
 <!-- Los mensajes llegan a: ismaelruge@gmail.com -->
+<!-- Incluye un campo honeypot (_honey) invisible como filtro anti-spam -->
 <form id="contact-form">
   <input type="text" name="name" required>
   <input type="email" name="email" required>
   <textarea name="message" required></textarea>
+  <input type="text" name="_honey" class="honeypot-field" tabindex="-1" autocomplete="off">
   <button type="submit">Enviar</button>
 </form>
 ```
@@ -150,35 +172,34 @@ updateJobDuration();
 ### Optimizaciones por Dispositivo
 
 #### Desktop (>1024px)
-- Layout completo con sidebars
+- Menú de navegación completo con scroll-spy
 - Grids de hasta 3 columnas
 - Animaciones completas
 
 #### Tablet (769px - 1024px)
 - Grids de 2 columnas
 - Container de 900px
-- Navegación optimizada
 
 #### Móvil (≤768px)
+- Menú de navegación colapsado en hamburguesa
 - Grids de 1 columna
-- Toggle de tema más pequeño
 - Timeline compacto
-- Estadísticas en 2 columnas
+- Botones de CTA a todo el ancho
 
 #### Móvil pequeño (≤480px)
 - Foto de perfil 120px
 - Estadísticas en 1 columna
 - Botones full-width
-- Texto reducido
 
 ## 🔍 SEO y Optimización
 
 ### Meta Tags
 ```html
 <!-- SEO Básico -->
-<title>Ismael Ruge Gonzalez | Desarrollador Fullstack Semi-Senior</title>
+<title>Ismael Ruge Gonzalez | Ingeniero de Sistemas & Desarrollador Fullstack Senior</title>
 <meta name="description" content="...">
 <meta name="keywords" content="...">
+<link rel="canonical" href="https://ismaelruge.github.io/">
 
 <!-- Open Graph (Redes Sociales) -->
 <meta property="og:title" content="...">
@@ -187,98 +208,30 @@ updateJobDuration();
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
+
+<!-- Datos estructurados -->
+<script type="application/ld+json">{ "@type": "Person", ... }</script>
 ```
 
-### Performance
+### Performance y Accesibilidad
 - ✅ Sin dependencias externas
 - ✅ CSS y JS minificables
-- ✅ Imágenes optimizadas
-- ✅ Lazy loading de imágenes (nativo)
+- ✅ Landmarks semánticos (`<main>`, `<nav>`) y enlace "Saltar al contenido"
+- ✅ Favicon propio en SVG
 - ✅ Smooth scroll performance
 
 ## 📊 Secciones del Portafolio
 
-### 1. Hero Section
-- Foto de perfil con efecto glassmorphism
-- Toggle de tema claro/oscuro
-- Enlaces a redes sociales (LinkedIn, GitHub, Platzi)
-- Información de contacto
-
-### 2. Sobre Mí
-- Descripción profesional con métricas reales
-- Mención de +300 resultados/segundo
-- 113 certificaciones y promedio 4.20
-- 3 objetivos profesionales
-
-### 3. Habilidades Técnicas (6 categorías)
-- Lenguajes de programación
-- Frontend (React, Angular, etc.)
-- Backend (.NET, Node.js, etc.)
-- Bases de datos (SQL Server, MongoDB, etc.)
-- DevOps & Cloud (Azure, Docker, etc.)
-- Seguridad y herramientas
-
-### 4. Experiencia Profesional
-**Colcan** (Dic 2023 - Actualidad)
-- Desarrollador Fullstack Semi-Senior
-- Sistema de interoperabilidad médica
-- +300 resultados por segundo
-- Liderazgo de equipos
-
-**HAS SQL S.A.S** (Mar 2022 - Dic 2023)
-- Desarrollador Fullstack Junior
-- Soluciones gubernamentales
-- Configuración de servidores
-
-### 5. Educación
-**Ingeniería en Sistemas - Uniremington**
-- Promedio: 4.20/5.0
-- 90% completado (131/145 créditos)
-- 34 cursos aprobados
-- 4 materias para graduarte
-
-**Proyecto de Grado**
-- Software de copias de seguridad automáticas
-- Integración con 5 plataformas cloud
-- Publicado en repositorio universitario
-- [Ver publicación](https://repositorio.uniremington.edu.co/handle/123456789/8679)
-
-### 6. Certificaciones
-- 113 certificaciones de Platzi
-- Organizadas en 9 categorías
-- Enlace a perfil completo
-
-### 7. Idiomas
-- Español (Nativo)
-- Inglés (Básico)
-
-### 8. Contacto
-- Formulario funcional
-- Validación de campos
-- Mensajes de éxito/error
-
-## 🌟 Destacados Técnicos
-
-### Logros Profesionales
-- ⚡ Sistema optimizado: **+300 resultados por segundo**
-- 🏥 Interoperabilidad entre dispositivos médicos
-- 💾 Implementación de caché local eficiente
-- 🔄 Gestión de trazabilidad completa
-- 👥 Liderazgo de equipos de desarrollo
-
-### Formación Académica
-- 🎓 Promedio: **4.20/5.0**
-- 📚 **90%** de la carrera completada
-- 📖 Proyecto de grado **publicado**
-- 🏆 **113 certificaciones** en Platzi
-
-### Stack Tecnológico
-- **Frontend**: Angular, React, HTML5, CSS3, JavaScript, TypeScript
-- **Backend**: .NET (ASP.NET Core, Web API, MVC), Node.js, Express.js
-- **Bases de Datos**: SQL Server, MongoDB, PostgreSQL, MySQL
-- **Cloud**: Azure (App Services, Blob Storage), Google Drive API, OneDrive API
-- **DevOps**: Docker, IIS, CI/CD con GitHub Actions
-- **Otros**: SignalR, Socket.io, JWT, OAuth2
+1. **Hero** — foto, nombre, título profesional, botones de "Descargar CV" y "Contáctame", contacto y redes sociales.
+2. **Datos clave** — franja con años de experiencia, certificaciones y promedio académico.
+3. **Sobre Mí** — resumen profesional y objetivos.
+4. **Habilidades Técnicas** — 6 categorías (lenguajes, frontend, backend, bases de datos, DevOps/Cloud, seguridad).
+5. **Experiencia Profesional** — Colcan (Desarrollador Senior Backend/Fullstack) y HAS SQL S.A.S.
+6. **Proyectos** — proyectos personales (agendamiento para centro de estética, app Android con OCR/código de barras/voz para tienda de abarrotes).
+7. **Educación** — Ingeniería de Sistemas en Uniremington y proyecto de grado.
+8. **Certificaciones & Cursos** — 113 certificaciones de Platzi organizadas en un acordeón por categoría.
+9. **Idiomas** — Español (nativo), Inglés (B1).
+10. **Contacto** — formulario funcional con validación y protección anti-spam.
 
 ## 📞 Contacto
 
@@ -297,9 +250,9 @@ updateJobDuration();
 
 ## 📝 Licencia
 
-© 2025 Ismael Ruge Gonzalez. Todos los derechos reservados.
+El **código fuente** (HTML, CSS y JavaScript) de este repositorio está bajo licencia [MIT](LICENSE).
 
-Este portafolio fue diseñado y desarrollado por Ismael Ruge Gonzalez.
+El **contenido personal** — texto curricular, hoja de vida, fotografía de perfil y demás información biográfica — no está cubierto por dicha licencia; todos los derechos sobre ese contenido quedan reservados a Ismael Ruge Gonzalez.
 
 ---
 
@@ -318,15 +271,15 @@ Edita las variables CSS en `styles.css`:
 ```
 
 #### Actualizar Información
-1. **Experiencia**: Edita `index.html` líneas 216-295
-2. **Habilidades**: Edita `index.html` líneas 129-210
-3. **Certificaciones**: Edita `index.html` líneas 336-577
-4. **Educación**: Edita `index.html` líneas 299-335
+Todo el contenido vive en `index.html`, organizado por secciones con comentarios (`<!-- Experiencia Profesional -->`, `<!-- Proyectos -->`, `<!-- Educación -->`, etc.). Busca el comentario de la sección que quieras editar en vez de guiarte por números de línea, ya que estos cambian con cada actualización del contenido.
+
+#### Actualizar el CV
+Reemplaza el archivo `assets/CV-IsmaelRuge.pdf` por la versión más reciente; el botón "Descargar CV" del hero apunta directamente a esa ruta.
 
 #### Configurar Formulario
 1. Crear cuenta en [FormSubmit](https://formsubmit.co)
-2. Actualizar email en `script.js` línea 155
-3. Verificar email la primera vez
+2. Actualizar el email de destino en el `fetch` dentro de `initContactForm()` en `script.js`
+3. Verificar el email la primera vez que se reciba un mensaje
 
 ### Deployment
 
