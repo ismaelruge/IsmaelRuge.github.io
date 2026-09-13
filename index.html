@@ -316,11 +316,15 @@
             <h2 class="section-title">Experiencia Profesional</h2>
 
             <div class="timeline">
-                <article class="timeline-item">
-                    <div class="timeline-header">
-                        <h4><span class="timeline-company">Colcan</span> - Bogotá (Remoto)</h4>
-                        <p class="timeline-date">Diciembre 2023 – Actualidad (<span id="colcan-duration">Calculando...</span>)</p>
-                    </div>
+                <details class="timeline-item cert-category" name="experience-accordion">
+                    <summary>
+                        <div class="timeline-header">
+                            <h4><span class="timeline-company">Colcan</span> - Bogotá (Remoto)</h4>
+                            <p class="timeline-date">Diciembre 2023 – Actualidad (<span id="colcan-duration">Calculando...</span>)</p>
+                        </div>
+                        <svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg>
+                    </summary>
+                    <div class="timeline-panel">
                     <p style="font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Desarrollador Senior Backend / Fullstack</p>
 
                     <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1rem; border-left: 4px solid var(--primary-color);">
@@ -371,13 +375,18 @@
                         <span class="skill-tag">Code Review</span>
                         <span class="skill-tag">Liderazgo</span>
                     </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-header">
-                        <h4><span class="timeline-company">HAS SQL S.A.S</span> - Duitama</h4>
-                        <p class="timeline-date">Marzo 2022 – Diciembre 2023 (21 meses)</p>
                     </div>
+                </details>
+
+                <details class="timeline-item cert-category" name="experience-accordion">
+                    <summary>
+                        <div class="timeline-header">
+                            <h4><span class="timeline-company">HAS SQL S.A.S</span> - Duitama</h4>
+                            <p class="timeline-date">Marzo 2022 – Diciembre 2023 (21 meses)</p>
+                        </div>
+                        <svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg>
+                    </summary>
+                    <div class="timeline-panel">
                     <p style="font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Desarrollador Backend / Fullstack</p>
                     <div class="timeline-description">
                         <ul>
@@ -403,7 +412,8 @@
                         <span class="skill-tag">Migración de Legados</span>
                         <span class="skill-tag">Mentoría</span>
                     </div>
-                </article>
+                    </div>
+                </details>
             </div>
         </section>
 
@@ -416,42 +426,52 @@
             </p>
 
             <div class="projects-grid">
-                <article class="card project-card">
-                    <div class="project-header">
-                        <h4>Sistema de Agendamiento para Centro de Estética</h4>
-                        <span class="project-badge">Proyecto Privado</span>
+                <details class="cert-category project-card" name="projects-accordion">
+                    <summary>
+                        <span class="project-header">
+                            <h4>Sistema de Agendamiento para Centro de Estética</h4>
+                            <span class="project-badge">Proyecto Privado</span>
+                        </span>
+                        <svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg>
+                    </summary>
+                    <div class="project-panel">
+                        <p class="project-description">
+                            Aplicación web para la gestión integral de citas, clientes y servicios de un centro de estética:
+                            agenda en tiempo real, historial de clientes, control de servicios y notificaciones automáticas
+                            para reducir inasistencias.
+                        </p>
+                        <div class="project-tags">
+                            <span class="skill-tag">Gestión de Citas</span>
+                            <span class="skill-tag">Backend</span>
+                            <span class="skill-tag">Frontend</span>
+                            <span class="skill-tag">Base de Datos</span>
+                        </div>
                     </div>
-                    <p class="project-description">
-                        Aplicación web para la gestión integral de citas, clientes y servicios de un centro de estética:
-                        agenda en tiempo real, historial de clientes, control de servicios y notificaciones automáticas
-                        para reducir inasistencias.
-                    </p>
-                    <div class="project-tags">
-                        <span class="skill-tag">Gestión de Citas</span>
-                        <span class="skill-tag">Backend</span>
-                        <span class="skill-tag">Frontend</span>
-                        <span class="skill-tag">Base de Datos</span>
-                    </div>
-                </article>
+                </details>
 
-                <article class="card project-card">
-                    <div class="project-header">
-                        <h4>App Android para Tienda de Abarrotes</h4>
-                        <span class="project-badge project-badge-progress">En Desarrollo · Proyecto Privado</span>
+                <details class="cert-category project-card" name="projects-accordion">
+                    <summary>
+                        <span class="project-header">
+                            <h4>App Android para Tienda de Abarrotes</h4>
+                            <span class="project-badge project-badge-progress">En Desarrollo · Proyecto Privado</span>
+                        </span>
+                        <svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg>
+                    </summary>
+                    <div class="project-panel">
+                        <p class="project-description">
+                            Aplicación móvil para digitalizar el inventario y las ventas de una tienda de abarrotes:
+                            reconocimiento óptico de caracteres (OCR) para registrar productos, escaneo de código de barras
+                            para agilizar el punto de venta y dictado por voz para registrar pedidos manos-libres.
+                        </p>
+                        <div class="project-tags">
+                            <span class="skill-tag">Android</span>
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">OCR</span>
+                            <span class="skill-tag">Código de Barras</span>
+                            <span class="skill-tag">Reconocimiento de Voz</span>
+                        </div>
                     </div>
-                    <p class="project-description">
-                        Aplicación móvil para digitalizar el inventario y las ventas de una tienda de abarrotes:
-                        reconocimiento óptico de caracteres (OCR) para registrar productos, escaneo de código de barras
-                        para agilizar el punto de venta y dictado por voz para registrar pedidos manos-libres.
-                    </p>
-                    <div class="project-tags">
-                        <span class="skill-tag">Android</span>
-                        <span class="skill-tag">Kotlin</span>
-                        <span class="skill-tag">OCR</span>
-                        <span class="skill-tag">Código de Barras</span>
-                        <span class="skill-tag">Reconocimiento de Voz</span>
-                    </div>
-                </article>
+                </details>
             </div>
 
             <p style="text-align: center; margin-top: 1.5rem;">
@@ -464,73 +484,77 @@
         <!-- Educación -->
         <section id="education">
             <h2 class="section-title">Educación</h2>
-            <div class="card">
-                <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
-                    <div>
-                        <h4 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 0.5rem;">
-                            🎓 Ingeniería de Sistemas
-                        </h4>
-                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Corporación Universitaria Remington (Uniremington)</p>
-                        <p style="color: var(--text-muted);">Virtual, Colombia • Graduado</p>
-                    </div>
-                    <div style="text-align: right;">
-                        <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
-                            <p style="font-size: 2rem; font-weight: 700; color: var(--primary-color); line-height: 1;">4.20</p>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Promedio Acumulado</p>
+
+            <details class="cert-category" name="education-accordion">
+                <summary><span>🎓 Ingeniería de Sistemas</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
+                <div class="education-panel">
+                    <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <p style="font-weight: 600; margin-bottom: 0.5rem;">Corporación Universitaria Remington (Uniremington)</p>
+                            <p style="color: var(--text-muted);">Virtual, Colombia • Graduado</p>
                         </div>
+                        <div style="text-align: right;">
+                            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
+                                <p style="font-size: 2rem; font-weight: 700; color: var(--primary-color); line-height: 1;">4.20</p>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Promedio Acumulado</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-md);">
+                        <div style="text-align: center;">
+                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">100%</p>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Carrera Completada</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">145/145</p>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Créditos</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">Aprobado</p>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Proyecto de Grado</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">🎓</p>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Graduado</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h5 style="color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.1rem;">Áreas de Especialización</h5>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem;">
+                            <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
+                                <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">💾 Bases de Datos</p>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Bases de Datos I y II, SQL Server</p>
+                            </div>
+                            <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
+                                <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">🏗️ Ingeniería de Software</p>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Desarrollo y arquitectura de software</p>
+                            </div>
+                            <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
+                                <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">💻 Programación Avanzada</p>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Lenguajes de programación y algoritmos</p>
+                            </div>
+                            <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
+                                <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">🌐 Redes y Comunicaciones</p>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Sistemas operativos y arquitectura digital</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05)); border-radius: var(--radius-md); border: 1px solid rgba(59, 130, 246, 0.2);">
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            <strong style="color: var(--primary-color);">Formación integral</strong> en desarrollo de software, arquitectura de sistemas,
+                            bases de datos, redes, seguridad informática y metodologías ágiles. Énfasis en desarrollo web,
+                            programación avanzada y proyectos de ingeniería.
+                        </p>
                     </div>
                 </div>
+            </details>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-md);">
-                    <div style="text-align: center;">
-                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">100%</p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Carrera Completada</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">145/145</p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Créditos</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">Aprobado</p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Proyecto de Grado</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">🎓</p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Graduado</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: 1.5rem;">
-                    <h5 style="color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.1rem;">Áreas de Especialización</h5>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem;">
-                        <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
-                            <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">💾 Bases de Datos</p>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Bases de Datos I y II, SQL Server</p>
-                        </div>
-                        <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
-                            <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">🏗️ Ingeniería de Software</p>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Desarrollo y arquitectura de software</p>
-                        </div>
-                        <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
-                            <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">💻 Programación Avanzada</p>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Lenguajes de programación y algoritmos</p>
-                        </div>
-                        <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
-                            <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">🌐 Redes y Comunicaciones</p>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Sistemas operativos y arquitectura digital</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top: 2rem;">
-                    <h5 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 1.5rem; height: 1.5rem; color: var(--primary-color);">
-                            <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
-                            <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z" />
-                            <path d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z" />
-                        </svg>
-                        Proyecto de Grado
-                    </h5>
+            <details class="cert-category" name="education-accordion">
+                <summary><span>🏆 Proyecto de Grado</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
+                <div class="education-panel">
                     <div style="background: var(--bg-tertiary); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
                         <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
                             <div style="flex: 1; min-width: 250px;">
@@ -596,15 +620,7 @@
                         </a>
                     </div>
                 </div>
-
-                <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05)); border-radius: var(--radius-md); border: 1px solid rgba(59, 130, 246, 0.2);">
-                    <p style="color: var(--text-secondary); line-height: 1.6;">
-                        <strong style="color: var(--primary-color);">Formación integral</strong> en desarrollo de software, arquitectura de sistemas,
-                        bases de datos, redes, seguridad informática y metodologías ágiles. Énfasis en desarrollo web,
-                        programación avanzada y proyectos de ingeniería.
-                    </p>
-                </div>
-            </div>
+            </details>
         </section>
 
         <!-- Certificaciones -->
