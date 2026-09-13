@@ -3,11 +3,13 @@
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+    initNavigation();
     initScrollAnimations();
     initContactForm();
     initSmoothScroll();
     initLanguageProgressBars();
     updateJobDuration();
+    initBackToTop();
 });
 
 // ========================================
@@ -49,6 +51,67 @@ function updateThemeIcon(theme) {
         if (sunIcon) sunIcon.style.display = 'none';
         if (moonIcon) moonIcon.style.display = 'block';
     }
+}
+
+// ========================================
+// NAVEGACIÓN (menú móvil + scroll-spy)
+// ========================================
+function initNavigation() {
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            const isActive = navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active', isActive);
+            navToggle.setAttribute('aria-expanded', String(isActive));
+        });
+
+        navMenu.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
+    // Resaltar el enlace de la sección visible (scroll-spy)
+    const navLinks = document.querySelectorAll('.nav-link');
+    if (navLinks.length === 0) return;
+
+    const sections = Array.from(navLinks)
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = `#${entry.target.id}`;
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === id);
+                });
+            }
+        });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach(section => spyObserver.observe(section));
+}
+
+// ========================================
+// BOTÓN VOLVER ARRIBA
+// ========================================
+function initBackToTop() {
+    const button = document.getElementById('back-to-top');
+    if (!button) return;
+
+    window.addEventListener('scroll', () => {
+        button.classList.toggle('visible', window.pageYOffset > 400);
+    });
+
+    button.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 }
 
 // ========================================
@@ -183,6 +246,12 @@ function initContactForm() {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
 
+        // Campo trampa anti-spam: si un bot lo llenó, se ignora silenciosamente
+        if (data._honey) {
+            form.reset();
+            return;
+        }
+
         // Validación básica
         if (!validateEmail(data.email)) {
             showFormMessage('Por favor, ingresa un email válido.', 'error');
@@ -254,6 +323,8 @@ function showFormMessage(message, type) {
     // Crear nuevo mensaje
     const messageDiv = document.createElement('div');
     messageDiv.className = `form-message ${type}`;
+    messageDiv.setAttribute('role', 'status');
+    messageDiv.setAttribute('aria-live', 'polite');
     messageDiv.textContent = message;
 
     const form = document.getElementById('contact-form');
