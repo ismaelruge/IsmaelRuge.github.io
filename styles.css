@@ -560,6 +560,12 @@ section.visible {
     font-size: 1.3rem;
     color: var(--text-primary);
     margin-bottom: var(--spacing-xs);
+    text-align: left;
+}
+
+.timeline-panel,
+.education-panel {
+    padding: 0 1.25rem 1.25rem;
 }
 
 .timeline-company {
@@ -865,19 +871,14 @@ footer {
    PROYECTOS
    ======================================== */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-md);
-}
-
-.project-card {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
 }
 
 .project-header {
     display: flex;
+    flex: 1;
+    min-width: 0;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -887,6 +888,13 @@ footer {
 .project-header h4 {
     color: var(--text-primary);
     font-size: 1.1rem;
+}
+
+.project-panel {
+    padding: 0 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .project-badge {
@@ -919,40 +927,6 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-}
-
-/* ========================================
-   ACTIVIDAD EN GITHUB
-   ======================================== */
-.github-activity-card {
-    text-align: center;
-}
-
-.github-activity-chart-wrap {
-    background: #ffffff;
-    border-radius: var(--radius-md);
-    padding: 1.5rem 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-/* Recorta el calendario (que el servicio genera para un año completo)
-   para mostrar solo el tramo más reciente, equivalente a ~30 días */
-.github-activity-chart-crop {
-    width: 220px;
-    max-width: 100%;
-    height: 170px;
-    overflow: hidden;
-    position: relative;
-}
-
-.github-activity-chart {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: auto;
-    max-width: none;
-    height: 220%;
 }
 
 /* ========================================
@@ -1021,6 +995,7 @@ footer {
         left: 0;
         right: 0;
         flex-direction: column;
+        flex-wrap: nowrap;
         align-items: flex-start;
         gap: 0;
         background: var(--bg-primary);
