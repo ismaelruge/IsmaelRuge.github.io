@@ -931,6 +931,27 @@ footer {
 }
 
 /* ========================================
+   ACTIVIDAD EN GITHUB
+   ======================================== */
+.github-activity-card {
+    text-align: center;
+}
+
+.github-activity-chart-wrap {
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.github-activity-chart {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================================
    BOTÓN VOLVER ARRIBA
    ======================================== */
 .back-to-top {
