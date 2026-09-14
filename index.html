@@ -410,8 +410,8 @@
         <section id="projects">
             <h2 class="section-title">Proyectos</h2>
             <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                Proyectos personales y comerciales. El código es privado, pero con gusto comparto detalles técnicos,
-                arquitectura y demo en una entrevista.
+                Proyectos personales y comerciales. Algunos son de código abierto; en los que no, con gusto comparto
+                detalles técnicos, arquitectura y demo en una entrevista.
             </p>
 
             <div class="projects-grid">
@@ -433,8 +433,9 @@
                             PostgreSQL, MongoDB, SQLite, Oracle) y 7 destinos (local, FTP, SFTP, Azure Blob, Amazon S3,
                             Google Drive, OneDrive). Incluye programación automática de tareas, retención y
                             restauración con auditoría, cifrado de credenciales (Argon2id + AES-256-GCM) y 88 pruebas
-                            automatizadas. Validé la compilación, la suite de pruebas y un flujo de backup real de
-                            punta a punta antes de publicar este caso de estudio.
+                            automatizadas. Nació como mi <strong>proyecto de grado</strong> y desde entonces lo he
+                            seguido evolucionando. Validé la compilación, la suite de pruebas y un flujo de backup
+                            real de punta a punta antes de publicar este caso de estudio.
                         </p>
                         <div class="project-tags">
                             <span class="skill-tag">.NET Core / ASP.NET Core MVC</span>
@@ -443,9 +444,11 @@
                             <span class="skill-tag">xUnit / Moq</span>
                             <span class="skill-tag">Cifrado AES-256-GCM</span>
                             <span class="skill-tag">GitHub Actions (CI)</span>
+                            <span class="skill-tag">Código Abierto</span>
                         </div>
                         <div class="case-links">
                             <a href="proyectos/backuppro.html" class="btn">Ver caso de estudio →</a>
+                            <a href="https://github.com/ismaelruge/BackupPro" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver código fuente ↗</a>
                         </div>
                     </div>
                 </details>
@@ -623,6 +626,12 @@
                                     Sistema automatizado de respaldo con integración a múltiples plataformas de almacenamiento en la nube,
                                     diseñado para garantizar la integridad y disponibilidad de datos críticos.
                                 </p>
+                                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                                    Este proyecto no se quedó en la entrega académica: lo seguí evolucionando y hoy es
+                                    <strong style="color: var(--primary-color);">BackupPro</strong>, con muchos más motores de
+                                    base de datos y destinos de almacenamiento, cifrado de credenciales y pruebas automatizadas.
+                                    Ver <a href="proyectos/backuppro.html" style="color: var(--primary-color); font-weight: 600;">caso de estudio</a>.
+                                </p>
                             </div>
                             <div style="background: rgba(59, 130, 246, 0.1); padding: 0.75rem 1rem; border-radius: var(--radius-sm); text-align: center; border: 1px solid rgba(59, 130, 246, 0.3);">
                                 <p style="font-weight: 700; color: var(--primary-color); font-size: 0.9rem; margin-bottom: 0.25rem;">APROBADO</p>
@@ -669,13 +678,22 @@
                             <span style="background: var(--bg-secondary); color: var(--primary-color); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.85rem; border: 1px solid var(--primary-color);">Automatización</span>
                         </div>
 
-                        <a href="https://repositorio.uniremington.edu.co/handle/123456789/8679" target="_blank" rel="noopener noreferrer" class="repo-link"
-                           style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary-color); color: white; padding: 0.75rem 1.25rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: var(--shadow-md);">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 1.25rem; height: 1.25rem;">
-                                <path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
-                            </svg>
-                            Ver Publicación en Repositorio Universitario
-                        </a>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                            <a href="https://repositorio.uniremington.edu.co/handle/123456789/8679" target="_blank" rel="noopener noreferrer" class="repo-link"
+                               style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary-color); color: white; padding: 0.75rem 1.25rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: var(--shadow-md);">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 1.25rem; height: 1.25rem;">
+                                    <path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
+                                </svg>
+                                Ver Publicación en Repositorio Universitario
+                            </a>
+                            <a href="proyectos/backuppro.html" class="repo-link"
+                               style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bg-secondary); color: var(--primary-color); border: 1px solid var(--primary-color); padding: 0.75rem 1.25rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 1.25rem; height: 1.25rem;">
+                                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75 0 4.309 2.795 7.965 6.675 9.255.488.09.665-.213.665-.473 0-.233-.008-.85-.013-1.668-2.716.59-3.289-1.31-3.289-1.31-.444-1.128-1.084-1.428-1.084-1.428-.886-.605.067-.593.067-.593.98.069 1.496 1.007 1.496 1.007.87 1.492 2.286 1.06 2.842.81.087-.63.34-1.06.618-1.303-2.168-.247-4.448-1.084-4.448-4.824 0-1.066.38-1.938 1.005-2.62-.101-.247-.436-1.24.096-2.583 0 0 .82-.263 2.688 1.001a9.36 9.36 0 012.448-.329c.83.004 1.667.112 2.448.329 1.867-1.264 2.686-1.001 2.686-1.001.533 1.343.198 2.336.097 2.583.627.682 1.004 1.554 1.004 2.62 0 3.75-2.284 4.573-4.46 4.815.35.301.662.895.662 1.803 0 1.302-.012 2.352-.012 2.671 0 .262.175.567.67.471C19.207 19.965 22 16.31 22 12c0-5.385-4.365-9.75-9.75-9.75-.083 0-.166 0-.25.002z" clip-rule="evenodd" />
+                                </svg>
+                                Ver Evolución: BackupPro →
+                            </a>
+                        </div>
                     </div>
                 </div>
             </details>
