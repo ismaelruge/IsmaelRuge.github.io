@@ -1,454 +1,200 @@
-// ========================================
-// INICIALIZACIÓN
-// ========================================
+/* Progressive enhancement: content and navigation remain usable without JavaScript. */
+'use strict';
+
 document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
-    initNavigation();
-    initScrollAnimations();
-    initContactForm();
-    initSmoothScroll();
-    initLanguageProgressBars();
-    updateJobDuration();
-    initBackToTop();
+    // An unavailable browser feature must not disable unrelated interactions.
+    [initTheme, initNavigation, initContactForm, initInquiryLinks, initBackToTop].forEach(init => {
+        try { init(); } catch (error) { console.warn('Portfolio enhancement unavailable:', init.name); }
+    });
 });
 
-// ========================================
-// TEMA CLARO/OSCURO
-// ========================================
 function initTheme() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-
-    // Cargar tema guardado o usar preferencia del sistema
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-    html.setAttribute('data-theme', initialTheme);
-    updateThemeIcon(initialTheme);
-
-    // Toggle de tema
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
+    const root = document.documentElement;
+    const toggle = document.getElementById('theme-toggle');
+    let savedTheme;
+    try { savedTheme = localStorage.getItem('theme'); } catch (_) { /* Storage may be blocked. */ }
+    const preference = window.matchMedia('(prefers-color-scheme: dark)');
+    function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        const isDark = theme === 'dark';
+        if (toggle) {
+            toggle.setAttribute('aria-pressed', String(isDark));
+            toggle.setAttribute('aria-label', isDark ? 'Activar tema claro' : 'Activar tema oscuro');
+        }
+        const sun = document.getElementById('sun-icon');
+        const moon = document.getElementById('moon-icon');
+        if (sun) sun.style.display = isDark ? 'block' : 'none';
+        if (moon) moon.style.display = isDark ? 'none' : 'block';
     }
+    const hasSavedTheme = savedTheme === 'light' || savedTheme === 'dark';
+    let followsSystem = !hasSavedTheme;
+    applyTheme(hasSavedTheme ? savedTheme : (preference.matches ? 'dark' : 'light'));
+    if (preference.addEventListener) preference.addEventListener('change', event => {
+        if (followsSystem) applyTheme(event.matches ? 'dark' : 'light');
+    });
+    if (toggle) toggle.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        followsSystem = false;
+        applyTheme(next);
+        try { localStorage.setItem('theme', next); } catch (_) { /* Theme still works for this visit. */ }
+    });
 }
 
-function updateThemeIcon(theme) {
-    const sunIcon = document.getElementById('sun-icon');
-    const moonIcon = document.getElementById('moon-icon');
-
-    if (theme === 'dark') {
-        if (sunIcon) sunIcon.style.display = 'block';
-        if (moonIcon) moonIcon.style.display = 'none';
-    } else {
-        if (sunIcon) sunIcon.style.display = 'none';
-        if (moonIcon) moonIcon.style.display = 'block';
-    }
-}
-
-// ========================================
-// NAVEGACIÓN (menú móvil + scroll-spy)
-// ========================================
 function initNavigation() {
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            const isActive = navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active', isActive);
-            navToggle.setAttribute('aria-expanded', String(isActive));
-        });
-
-        navMenu.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    if (!menu || !toggle) return;
+    const mobile = window.matchMedia('(max-width: 800px)');
+    function setOpen(open) {
+        menu.classList.toggle('active', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     }
-
-    // Resaltar el enlace de la sección visible (scroll-spy)
-    const navLinks = document.querySelectorAll('.nav-link');
-    if (navLinks.length === 0) return;
-
-    const sections = Array.from(navLinks)
-        .map(link => document.querySelector(link.getAttribute('href')))
-        .filter(Boolean);
-
-    const spyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = `#${entry.target.id}`;
-                navLinks.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href') === id);
-                });
+    toggle.hidden = false;
+    menu.classList.add('menu-enhanced');
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            setOpen(false);
+            // Preserve native hash navigation and move keyboard focus out of the closed menu.
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const target = document.getElementById(href.slice(1));
+                if (target) {
+                    target.setAttribute('tabindex', '-1');
+                    target.focus({ preventScroll: true });
+                }
             }
         });
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-
-    sections.forEach(section => spyObserver.observe(section));
+    });
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menu.classList.contains('active')) {
+            setOpen(false);
+            toggle.focus();
+        }
+    });
+    document.addEventListener('click', event => {
+        if (!menu.contains(event.target) && !toggle.contains(event.target)) setOpen(false);
+    });
+    if (mobile.addEventListener) mobile.addEventListener('change', () => setOpen(false));
+    // Keep the native skip-link behavior; main has tabindex="-1" in every page.
+    const links = Array.from(menu.querySelectorAll('.nav-link[href^="#"]'));
+    const sections = links.map(link => document.getElementById(link.getAttribute('href').slice(1))).filter(Boolean);
+    if (!('IntersectionObserver' in window)) return;
+    const visibleSections = new Set();
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) visibleSections.add(entry.target);
+            else visibleSections.delete(entry.target);
+        });
+        const active = sections.find(section => visibleSections.has(section));
+        links.forEach(link => {
+            const selected = Boolean(active && link.getAttribute('href') === '#' + active.id);
+            link.classList.toggle('active', selected);
+            if (selected) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
+        });
+    }, { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
+    sections.forEach(section => observer.observe(section));
 }
 
-// ========================================
-// BOTÓN VOLVER ARRIBA
-// ========================================
+function initInquiryLinks() {
+    const select = document.getElementById('interest');
+    if (!select) return;
+    document.querySelectorAll('[data-inquiry]').forEach(link => {
+        link.addEventListener('click', () => {
+            const value = link.getAttribute('data-inquiry');
+            if (Array.from(select.options).some(option => option.value === value)) select.value = value;
+        });
+    });
+}
+
 function initBackToTop() {
     const button = document.getElementById('back-to-top');
     if (!button) return;
-
-    window.addEventListener('scroll', () => {
-        button.classList.toggle('visible', window.pageYOffset > 400);
-    });
-
+    const update = () => button.classList.toggle('visible', window.scrollY > 400);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
     button.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduced ? 'instant' : 'smooth' });
+        const main = document.getElementById('main-content');
+        if (main) main.focus({ preventScroll: true });
     });
 }
 
-// ========================================
-// ANIMACIONES AL SCROLL
-// ========================================
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.05, // Reducido para mejor detección en móviles
-        rootMargin: '0px 0px -20px 0px' // Reducido para móviles
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Dejar de observar una vez que se agregó la clase visible
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observar todas las secciones
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // Observar cards individuales
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        observer.observe(card);
-    });
-}
-
-// ========================================
-// SCROLL SUAVE PARA NAVEGACIÓN
-// ========================================
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-
-            if (target) {
-                const offset = 80; // Offset para header fijo si lo hay
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
-// ========================================
-// BARRAS DE PROGRESO DE IDIOMAS
-// ========================================
-function initLanguageProgressBars() {
-    const languageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBar = entry.target.querySelector('.language-progress-bar');
-                if (progressBar) {
-                    const width = progressBar.getAttribute('data-width');
-                    setTimeout(() => {
-                        progressBar.style.width = width;
-                    }, 200);
-                }
-                languageObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.language-item').forEach(item => {
-        languageObserver.observe(item);
-    });
-}
-
-// ========================================
-// ACTUALIZACIÓN AUTOMÁTICA DE DURACIÓN DEL TRABAJO
-// ========================================
-function updateJobDuration() {
-    const durationElement = document.getElementById('colcan-duration');
-    if (!durationElement) return;
-
-    // Fecha de inicio: 13 de diciembre de 2023
-    const startDate = new Date('2023-12-13T00:00:00-05:00'); // Zona horaria de Colombia (UTC-5)
-
-    // Fecha actual en zona horaria de Colombia
-    const now = new Date();
-    const colombiaTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Bogota' }));
-
-    // Calcular la diferencia en meses
-    let months = (colombiaTime.getFullYear() - startDate.getFullYear()) * 12;
-    months += colombiaTime.getMonth() - startDate.getMonth();
-
-    // Ajustar si el día actual es menor que el día de inicio
-    if (colombiaTime.getDate() < startDate.getDate()) {
-        months--;
-    }
-
-    // Calcular años y meses
-    const years = Math.floor(months / 12);
-    const remainingMonths = months % 12;
-
-    // Formatear el texto
-    let durationText = '';
-
-    if (years > 0 && remainingMonths > 0) {
-        durationText = `${years} ${years === 1 ? 'año' : 'años'} y ${remainingMonths} ${remainingMonths === 1 ? 'mes' : 'meses'}`;
-    } else if (years > 0) {
-        durationText = `${years} ${years === 1 ? 'año' : 'años'}`;
-    } else {
-        durationText = `${months} ${months === 1 ? 'mes' : 'meses'}`;
-    }
-
-    durationElement.textContent = durationText;
-}
-
-// ========================================
-// FORMULARIO DE CONTACTO
-// ========================================
 function initContactForm() {
     const form = document.getElementById('contact-form');
-    if (!form) return;
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-
-        // Campo trampa anti-spam: si un bot lo llenó, se ignora silenciosamente
-        if (data._honey) {
-            form.reset();
+    if (!form || !window.fetch || !window.AbortController) return;
+    form.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (form.dataset.sending === 'true') return;
+        if (!form.reportValidity()) return;
+        const data = Object.fromEntries(new FormData(form));
+        if (data._honey) return;
+        const name = String(data.name || '').trim();
+        const email = String(data.email || '').trim();
+        const message = String(data.message || '').trim();
+        if (!name || !validateEmail(email) || message.length < 10) {
+            showFormMessage('Revisa tu nombre, correo y mensaje (mínimo 10 caracteres).', 'error');
             return;
         }
-
-        // Validación básica
-        if (!validateEmail(data.email)) {
-            showFormMessage('Por favor, ingresa un email válido.', 'error');
-            return;
-        }
-
-        if (!data.name || !data.message) {
-            showFormMessage('Por favor, completa todos los campos.', 'error');
-            return;
-        }
-
-        // Mostrar estado de carga
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Enviando...';
-        submitBtn.disabled = true;
-        form.classList.add('loading');
-
+        const button = form.querySelector('button[type="submit"]');
+        const originalLabel = button.innerHTML;
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 20000);
+        form.dataset.sending = 'true';
+        form.setAttribute('aria-busy', 'true');
+        button.disabled = true;
+        button.textContent = 'Enviando…';
+        showFormMessage('Enviando tu mensaje…', 'pending');
         try {
-            // Usando FormSubmit (servicio gratuito)
-            // Reemplaza con tu endpoint de FormSubmit o EmailJS
             const response = await fetch('https://formsubmit.co/ajax/ismaelruge@gmail.com', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                signal: controller.signal,
                 body: JSON.stringify({
-                    name: data.name,
-                    email: data.email,
-                    message: data.message,
-                    _subject: `Nuevo mensaje de ${data.name} desde tu portafolio`,
+                    name, email, message,
+                    interest: data.interest || 'Consulta',
+                    _replyto: email,
+                    _subject: 'Portafolio: ' + (data.interest || 'Consulta'),
                     _template: 'table'
                 })
             });
-
-            if (response.ok) {
-                showFormMessage('¡Mensaje enviado con éxito! Te responderé pronto.', 'success');
-                form.reset();
-            } else {
-                throw new Error('Error al enviar el formulario');
+            const result = await response.json();
+            if (!response.ok || !(result.success === true || result.success === 'true')) {
+                throw new Error('Message not accepted');
             }
-        } catch (error) {
-            console.error('Error:', error);
-            showFormMessage(
-                'Hubo un error al enviar el mensaje. Por favor, contáctame directamente a ismaelruge@gmail.com',
-                'error'
-            );
+            showFormMessage('Tu mensaje fue enviado. Gracias por contarme sobre tu proyecto u oportunidad.', 'success');
+            form.reset();
+        } catch (_) {
+            showFormMessage('No pude confirmar el envío. Tu mensaje sigue aquí: puedes intentarlo de nuevo o escribirme a ismaelruge@gmail.com.', 'error');
         } finally {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            form.classList.remove('loading');
+            clearTimeout(timer);
+            delete form.dataset.sending;
+            form.removeAttribute('aria-busy');
+            button.innerHTML = originalLabel;
+            button.disabled = false;
         }
     });
 }
 
 function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 function showFormMessage(message, type) {
-    // Eliminar mensaje previo si existe
-    const existingMessage = document.querySelector('.form-message');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-
-    // Crear nuevo mensaje
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `form-message ${type}`;
-    messageDiv.setAttribute('role', 'status');
-    messageDiv.setAttribute('aria-live', 'polite');
-    messageDiv.textContent = message;
-
     const form = document.getElementById('contact-form');
-    form.appendChild(messageDiv);
-
-    // Auto-eliminar después de 5 segundos
-    setTimeout(() => {
-        messageDiv.style.opacity = '0';
-        setTimeout(() => messageDiv.remove(), 300);
-    }, 5000);
-}
-
-// ========================================
-// EFECTO DE TYPING (OPCIONAL)
-// ========================================
-function typeWriter(element, text, speed = 50) {
-    let i = 0;
-    element.textContent = '';
-
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
+    if (!form) return;
+    let status = document.getElementById('form-status');
+    if (!status) {
+        status = document.createElement('p');
+        status.id = 'form-status';
+        status.setAttribute('role', 'status');
+        status.setAttribute('aria-live', 'polite');
+        status.setAttribute('aria-atomic', 'true');
+        form.appendChild(status);
     }
-
-    type();
-}
-
-// ========================================
-// DETECCIÓN DE SCROLL PARA HEADER (si se añade)
-// ========================================
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    // Aquí puedes añadir lógica para header sticky si lo necesitas
-    // Por ejemplo, cambiar estilos del header al hacer scroll
-
-    lastScroll = currentScroll;
-});
-
-// ========================================
-// EASTER EGG - KONAMI CODE (opcional, para diversión)
-// ========================================
-let konamiCode = [];
-const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-
-document.addEventListener('keydown', (e) => {
-    konamiCode.push(e.key);
-    konamiCode = konamiCode.slice(-10);
-
-    if (konamiCode.join(',') === konamiPattern.join(',')) {
-        activateEasterEgg();
-    }
-});
-
-function activateEasterEgg() {
-    // Efecto divertido cuando se ingresa el Konami Code
-    const body = document.body;
-    body.style.animation = 'rainbow 2s linear infinite';
-
-    setTimeout(() => {
-        body.style.animation = '';
-    }, 5000);
-}
-
-// Añadir animación rainbow al CSS si quieres usarla
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes rainbow {
-        0% { filter: hue-rotate(0deg); }
-        100% { filter: hue-rotate(360deg); }
-    }
-`;
-document.head.appendChild(style);
-
-// ========================================
-// UTILIDADES
-// ========================================
-
-// Throttle function para optimizar eventos de scroll
-function throttle(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Debounce function para inputs
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Copiar email al portapapeles
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        showFormMessage('Email copiado al portapapeles!', 'success');
-    }).catch(err => {
-        console.error('Error al copiar:', err);
-    });
-}
-
-// Exportar funciones si es necesario
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        initTheme,
-        initScrollAnimations,
-        initContactForm,
-        validateEmail
-    };
+    status.className = 'form-message ' + type;
+    status.textContent = message;
 }

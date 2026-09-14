@@ -1,1 +1,4 @@
-.claude
+public
+dist/
+test-results/
+__pycache__/
