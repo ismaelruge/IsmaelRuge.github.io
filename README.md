@@ -48,6 +48,7 @@ Portafolio web profesional de Ismael Ruge Gonzalez, Ingeniero de Sistemas y Desa
 - 📧 **Formulario de contacto funcional** (FormSubmit) con campo anti-spam (honeypot)
 - 📊 **Barras de progreso animadas** para idiomas
 - 🗂️ **Habilidades, Experiencia, Proyectos, Educación y Certificaciones en acordeón**, colapsados por defecto para una lectura más compacta
+- 🧪 **Página de caso de estudio** para el proyecto Bella Vita Spa (DemoSpa), con capturas, diseño, arquitectura y SEO explicados en detalle
 - 🎯 **Smooth scroll** entre secciones
 - ⌨️ **Easter egg** con Konami Code
 
@@ -89,10 +90,15 @@ IsmaelRuge.github.io/
 ├── LICENSE                   # Licencia MIT (aplica solo al código)
 ├── README.md                 # Este archivo
 │
+├── proyectos/
+│   └── demo-spa.html         # Caso de estudio: Bella Vita Spa (DemoSpa)
+│
 └── assets/
     ├── CV-IsmaelRuge.pdf     # Hoja de vida descargable
     └── Images/
-        └── Profile.png       # Foto de perfil
+        ├── Profile.png       # Foto de perfil
+        └── projects/
+            └── demo-spa/      # Capturas del caso de estudio Bella Vita Spa
 ```
 
 ## 🚀 Instalación Local
@@ -231,7 +237,7 @@ initNavigation();
 3. **Sobre Mí** — resumen profesional y objetivos.
 4. **Habilidades Técnicas** — 6 categorías en acordeón (lenguajes, frontend, backend, bases de datos, DevOps/Cloud, seguridad).
 5. **Experiencia Profesional** — Colcan (Desarrollador Senior Backend/Fullstack) y HAS SQL S.A.S, cada una colapsable.
-6. **Proyectos** — proyectos personales en acordeón (agendamiento para centro de estética, app Android con OCR/código de barras/voz para tienda de abarrotes).
+6. **Proyectos** — proyectos en acordeón: Bella Vita Spa (DemoSpa), landing page comercial con demo en vivo y [caso de estudio propio](proyectos/demo-spa.html) sobre diseño, arquitectura y SEO; además de proyectos personales de código privado (agendamiento para centro de estética, app Android con OCR/código de barras/voz para tienda de abarrotes).
 7. **Educación** — Ingeniería de Sistemas en Uniremington y proyecto de grado, cada uno colapsable por separado.
 8. **Certificaciones & Cursos** — 113 certificaciones de Platzi organizadas en un acordeón por categoría.
 9. **Idiomas** — Español (nativo), Inglés (B1).
