@@ -242,7 +242,7 @@ initNavigation();
 3. **Sobre Mí** — resumen profesional y objetivos.
 4. **Habilidades Técnicas** — 6 categorías en acordeón (lenguajes, frontend, backend, bases de datos, DevOps/Cloud, seguridad).
 5. **Experiencia Profesional** — Colcan (Desarrollador Senior Backend/Fullstack) y HAS SQL S.A.S, cada una colapsable.
-6. **Proyectos** — proyectos en acordeón: BackupPro (código abierto, [caso de estudio propio](proyectos/backuppro.html) con arquitectura, seguridad y pruebas); Bella Vita Spa (DemoSpa), landing page comercial con demo en vivo y [caso de estudio propio](proyectos/demo-spa.html) sobre diseño, arquitectura y SEO; además de proyectos personales de código privado (agendamiento para centro de estética, app Android con OCR/código de barras/voz para tienda de abarrotes).
+6. **Proyectos** — proyectos en acordeón: BackupPro (código abierto, [caso de estudio propio](proyectos/backuppro.html) con arquitectura, seguridad y pruebas); Bella Vita Spa (DemoSpa), landing page comercial con demo en vivo y [caso de estudio propio](proyectos/demo-spa.html) sobre diseño, arquitectura y SEO; Estética, sistema de gestión para un centro de estética (código privado) con [caso de estudio propio](proyectos/estetica.html) sobre funcionalidad, seguridad y pruebas; además de un proyecto personal de código privado en desarrollo (app Android con OCR/código de barras/voz para tienda de abarrotes).
 7. **Educación** — Ingeniería de Sistemas en Uniremington y proyecto de grado (con [visor propio](proyectos/proyecto-grado.html) del documento y enlace a su evolución como BackupPro), cada uno colapsable por separado.
 8. **Certificaciones & Cursos** — 113 certificaciones de Platzi organizadas en un acordeón por categoría.
 9. **Idiomas** — Español (nativo), Inglés (B1).

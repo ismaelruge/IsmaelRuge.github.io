@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Caso de estudio: Estética | Ismael Ruge Gonzalez</title>
+    <meta name="description" content="Caso de estudio del proyecto Estética: sistema de gestión full stack para un centro de estética construido con ASP.NET Core 10 y Angular 22 — agenda de citas, clientes, ventas, compras, gastos y administración con roles.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ismaelruge.github.io/proyectos/estetica.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Caso de estudio: Estética">
+    <meta property="og:description" content="Sistema de gestión full stack para un centro de estética: agenda de citas, clientes, ventas, compras, gastos y administración con roles, construido con ASP.NET Core 10 y Angular 22.">
+    <meta property="og:image" content="https://ismaelruge.github.io/assets/Images/projects/estetica/dashboard.jpg">
+    <meta property="og:url" content="https://ismaelruge.github.io/proyectos/estetica.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Caso de estudio: Estética">
+    <meta name="twitter:description" content="Sistema de gestión full stack para un centro de estética: agenda de citas, clientes, ventas, compras, gastos y administración con roles, construido con ASP.NET Core 10 y Angular 22.">
+    <meta name="twitter:image" content="https://ismaelruge.github.io/assets/Images/projects/estetica/dashboard.jpg">
+
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Estética",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, Linux",
+        "author": {
+            "@type": "Person",
+            "name": "Ismael Ruge Gonzalez",
+            "url": "https://ismaelruge.github.io/"
+        },
+        "about": "Sistema de gestión web para un centro de estética: citas, clientes, servicios, productos, ventas, compras y gastos",
+        "url": "https://ismaelruge.github.io/proyectos/estetica.html",
+        "image": "https://ismaelruge.github.io/assets/Images/projects/estetica/dashboard.jpg"
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Navegación -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Ismael Ruge</a>
+
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="nav-back-link">← Volver al portafolio</a>
+
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+                    </svg>
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero del caso de estudio -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="project-tags" style="justify-content: center; margin-bottom: 1rem;">
+                    <span class="skill-tag">ASP.NET Core 10 Web API</span>
+                    <span class="skill-tag">Angular 22 + Material</span>
+                    <span class="skill-tag">Dapper + SQLite</span>
+                </div>
+
+                <h1>Estética</h1>
+                <p class="subtitle">Sistema de gestión integral para un centro de estética</p>
+                <p style="color: var(--text-secondary); max-width: 640px; margin: 0 auto;">
+                    Caso de estudio de una aplicación full stack real: agenda de citas, clientes, servicios,
+                    productos, ventas, compras y gastos en un solo lugar, con autenticación segura y roles
+                    diferenciados para el equipo y para la administración del negocio.
+                </p>
+            </div>
+        </section>
+
+        <!-- Datos clave -->
+        <section class="stats-bar" id="datos-clave">
+            <div class="container stats-bar-grid">
+                <div class="stat-box">
+                    <span class="stat-number">13</span>
+                    <span class="stat-label">Pantallas operativas y de administración</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">75</span>
+                    <span class="stat-label">Pruebas automatizadas (backend + frontend)</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">Argon2id</span>
+                    <span class="stat-label">Contraseñas + cookies HttpOnly + CSRF</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">2 roles</span>
+                    <span class="stat-label">SuperAdmin y equipo operativo, cada uno con su vista</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <!-- Contexto -->
+            <section id="contexto">
+                <h2 class="section-title">Contexto y objetivo</h2>
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Estética</strong> nació de un problema muy concreto de un negocio pequeño: la agenda
+                        de citas, el control de clientes, el inventario de productos y las cuentas del mes vivían
+                        repartidos entre un cuaderno, una hoja de cálculo y la memoria de quien atendía el mostrador.
+                        La construí como un sistema único donde agendar una cita, registrar una venta o revisar
+                        cuánto se gastó en el mes toma segundos en lugar de reconstruirse a mano cada vez.
+                    </p>
+                    <p>
+                        Es una aplicación de código completo (no un mockup): autenticación real con cookies
+                        <code>HttpOnly</code>, cambio de contraseña obligatorio en el primer ingreso, dos roles con
+                        vistas distintas, una base de datos con migraciones versionadas y una suite de pruebas que
+                        cubre la lógica de negocio.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Funcionalidad -->
+            <section id="funcionalidad">
+                <h2 class="section-title">Qué hace</h2>
+                <div class="card">
+                    <ul class="case-list">
+                        <li><strong>Panel general:</strong> ingresos, gastos, costo de productos vendidos y utilidad
+                            neta del día, la semana o el mes, con la agenda de próximas citas a la vista.</li>
+                        <li><strong>Agenda de citas:</strong> vista de línea de tiempo por día, con estados
+                            (pendiente, confirmada, completada, cancelada) y acciones rápidas para confirmar o
+                            completar una cita sin salir de la vista.</li>
+                        <li><strong>Catálogos de clientes, servicios y productos:</strong> CRUD completo con control
+                            de estado (activo/inactivo) y, en productos, seguimiento de stock y costo promedio.</li>
+                        <li><strong>Ventas:</strong> una sola operación combina productos y servicios, descuenta stock
+                            automáticamente y calcula el costo real vendido para el panel de utilidad.</li>
+                        <li><strong>Compras y gastos:</strong> registro de compras a proveedores que repone stock, y
+                            control de gastos por categoría (arriendo, nómina, servicios públicos, etc.).</li>
+                        <li><strong>Administración (solo SuperAdmin):</strong> nombre del negocio, gestión de
+                            usuarios del equipo, visor de logs del sistema y descarga de un respaldo completo de la
+                            base de datos con un clic.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seguridad -->
+            <section id="seguridad">
+                <h2 class="section-title">Seguridad</h2>
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        La sesión y las credenciales se tratan como lo haría una aplicación en producción, no como un
+                        ejercicio académico:
+                    </p>
+                    <ul class="case-list">
+                        <li><strong>Sesión por cookie <code>HttpOnly</code></strong>, revalidada contra la base de
+                            datos en cada request: si el usuario se desactiva o cambia su contraseña en otra pestaña,
+                            la sesión actual se cierra automáticamente.</li>
+                        <li><strong>Protección CSRF</strong> (<code>GET /api/v1/auth/csrf</code>, header
+                            <code>X-XSRF-TOKEN</code>) exigida en todo método mutador bajo <code>/api</code>.</li>
+                        <li><strong>Rate limiting por IP</strong> (5 intentos por minuto) en login y en cambio de
+                            contraseña, para mitigar fuerza bruta.</li>
+                        <li><strong>Contraseñas con Argon2id</strong> (memory-hard, resistente a fuerza bruta) en
+                            lugar de un hash rápido tipo SHA-256.</li>
+                        <li><strong>Contraseña temporal obligatoria:</strong> tanto el usuario administrador inicial
+                            como cualquier cuenta reseteada por un SuperAdmin quedan forzadas a definir su propia
+                            contraseña antes de poder usar el resto de la aplicación.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Arquitectura -->
+            <section id="arquitectura">
+                <h2 class="section-title">Arquitectura técnica</h2>
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        Backend y frontend viven en el mismo repositorio: ASP.NET Core sirve la API y, en producción,
+                        el build ya compilado de Angular; en desarrollo, <code>Microsoft.AspNetCore.SpaProxy</code>
+                        reenvía las peticiones al servidor de Angular para tener recarga en caliente en ambos lados
+                        con un solo <code>dotnet run</code>.
+                    </p>
+                    <div class="project-tags" style="margin-bottom: 1rem;">
+                        <span class="skill-tag">Angular standalone components + signals</span>
+                        <span class="skill-tag">Dapper (sin ORM)</span>
+                        <span class="skill-tag">Migraciones SQL versionadas</span>
+                        <span class="skill-tag">FusionCache</span>
+                        <span class="skill-tag">Serilog</span>
+                        <span class="skill-tag">GitHub Actions (CI)</span>
+                    </div>
+                    <ul class="case-list">
+                        <li><strong>Datos con Dapper, no Entity Framework:</strong> el esquema vive en archivos
+                            <code>Data/Migrations/*.sql</code> versionados y registrados en una tabla
+                            <code>SchemaMigrations</code>; al arrancar, el backend aplica en orden cualquier
+                            migración pendiente, tanto en una base nueva como en una ya existente.</li>
+                        <li><strong>Roles a nivel de guard de ruta:</strong> el mismo layout de Angular cambia su
+                            navegación entre la vista operativa (agenda, clientes, ventas...) y la vista SuperAdmin
+                            (configuración, usuarios, logs, respaldo) según la sesión — sin duplicar el shell de la
+                            aplicación.</li>
+                        <li><strong>Caché de lecturas con FusionCache:</strong> datos como la configuración del
+                            negocio se sirven desde caché para no golpear la base en cada request; el matiz honesto
+                            es que solo se invalida cuando el cambio pasa por la propia API, así que una edición
+                            hecha directo en la base de datos no se refleja hasta que la caché expira.</li>
+                        <li><strong>CI:</strong> GitHub Actions corre build, tests, lint y build de producción del
+                            frontend en cada push y pull request.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Pruebas y validación -->
+            <section id="pruebas">
+                <h2 class="section-title">Pruebas y validación</h2>
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        Antes de tomar las capturas de este caso de estudio, cloné el repositorio en un entorno
+                        limpio, instalé el SDK de .NET 10 y Node 24, y verifiqué que el proyecto compila y pasa sus
+                        pruebas sin intervención manual:
+                    </p>
+                    <ul class="case-list">
+                        <li><code>dotnet build</code> — compila sin advertencias ni errores.</li>
+                        <li><code>dotnet test</code> — <strong>35 pruebas, 0 fallidas</strong> (xUnit), cubriendo
+                            servicios de negocio y utilidades comunes.</li>
+                        <li><code>npm run lint</code> — sin problemas.</li>
+                        <li><code>npm test</code> — <strong>40 pruebas, 0 fallidas</strong> (Vitest) sobre guards,
+                            servicios y componentes del frontend.</li>
+                        <li><code>npm run build</code> — genera el build de producción de Angular sin errores.</li>
+                        <li><strong>Flujo end-to-end real, sin mocks:</strong> sembré datos de ejemplo, completé el
+                            cambio de contraseña obligatorio, creé un usuario operativo adicional desde el panel de
+                            administración y recorrí cada pantalla como ambos roles — SuperAdmin y equipo — para las
+                            capturas de abajo.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Galería de capturas -->
+            <section id="capturas">
+                <h2 class="section-title">Capturas de pantalla</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Recorrido por la aplicación: desde el primer inicio de sesión hasta el panel de administración.
+                </p>
+
+                <div class="shots-grid">
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/estetica/login.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/estetica/login.jpg" alt="Pantalla de inicio de sesión de Estética" loading="lazy">
+                        </a>
+                        <figcaption>Inicio de sesión</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/estetica/cambiar-password.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/estetica/cambiar-password.jpg" alt="Pantalla de cambio de contraseña obligatorio" loading="lazy">
+                        </a>
+                        <figcaption>Cambio de contraseña obligatorio en el primer ingreso</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/estetica/dashboard.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/estetica/dashboard.jpg" alt="Panel general con ingresos, gastos y próximas citas" loading="lazy">
+                        </a>
+                        <figcaption>Panel general — ingresos, gastos y agenda del día</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/estetica/citas.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/estetica/citas.jpg" alt="Agenda de citas en vista de línea de tiempo" loading="lazy">
+                        </a>
+                        <figcaption>Agenda de citas con línea de tiempo</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/estetica/clientes.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/estetica/clientes.jpg" alt="Catálogo de clientes del centro de estética" loading="lazy">
+                        </a>
+                        <figcaption>Catálogo de clientes</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/estetica/servicios.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/estetica/servicios.jpg" alt="Catálogo de servicios con precio y duración" loading="lazy">
+                        </a>
+                        <figcaption>Catálogo de servicios</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/estetica/ventas.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/estetica/ventas.jpg" alt="Registro de ventas con productos y servicios" loading="lazy">
+                        </a>
+                        <figcaption>Registro de ventas</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/estetica/gastos.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/estetica/gastos.jpg" alt="Control de gastos por categoría" loading="lazy">
+                        </a>
+                        <figcaption>Control de gastos por categoría</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/estetica/usuarios.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/estetica/usuarios.jpg" alt="Administración de usuarios del equipo" loading="lazy">
+                        </a>
+                        <figcaption>Administración de usuarios (SuperAdmin)</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/estetica/backup.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/estetica/backup.jpg" alt="Descarga de respaldo de la base de datos" loading="lazy">
+                        </a>
+                        <figcaption>Respaldo de la base de datos con un clic</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Rol y aprendizajes -->
+            <section id="rol">
+                <h2 class="section-title">Mi rol y aprendizajes</h2>
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        Diseñé y construí toda la aplicación: el modelo de datos y sus migraciones, la API en
+                        ASP.NET Core, el frontend en Angular con componentes standalone y signals, la separación de
+                        roles, la seguridad de la sesión y la suite de pruebas de ambos lados.
+                    </p>
+                    <p>
+                        El aprendizaje más reutilizable fue resolver la separación de roles a nivel de
+                        <em>route guards</em> en lugar de esconder u ocultar botones en la interfaz: un
+                        <code>operationalGuard</code> y un <code>superAdminGuard</code> deciden qué rutas puede
+                        activar cada sesión, y el propio layout cambia su navegación según cuál se cumplió — así el
+                        control de acceso vive en un solo lugar y no se repite pantalla por pantalla.
+                    </p>
+                </div>
+
+                <p style="text-align: center; margin-top: 1.5rem;">
+                    <a href="../index.html#contact" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">
+                        ¿Quieres conocer más detalles técnicos de este proyecto? Escríbeme →
+                    </a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Botón volver arriba -->
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V7.06l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z" clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ismael Ruge González. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+            <a href="../index.html" style="color: inherit; text-decoration: underline;">← Volver al portafolio</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
+</body>
+</html>
