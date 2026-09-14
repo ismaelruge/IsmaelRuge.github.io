@@ -1215,6 +1215,87 @@ footer {
 }
 
 /* ========================================
+   CASO DE ESTUDIO DE PROYECTO (proyectos/*.html)
+   ======================================== */
+.nav-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.nav-back-link:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.case-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.shots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.shots-grid.shots-grid-mobile {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.shot-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.shot-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.shot-card a {
+    display: block;
+    line-height: 0;
+}
+
+.shot-card img {
+    width: 100%;
+    display: block;
+}
+
+.shot-card figcaption {
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.case-list {
+    color: var(--text-secondary);
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* ========================================
    ANIMACIONES ADICIONALES
    ======================================== */
 @keyframes float {
