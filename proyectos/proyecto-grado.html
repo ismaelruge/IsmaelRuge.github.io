@@ -96,20 +96,37 @@
             border-radius: var(--radius-md);
             padding: 1.5rem;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
             box-shadow: var(--shadow-md);
-            min-height: 40vh;
+        }
+
+        .viewer-page-wrapper {
+            width: 100%;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .viewer-page-img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
+            aspect-ratio: 1105 / 1430;
+            background: var(--bg-primary);
             box-shadow: var(--shadow-lg);
             border-radius: 2px;
             -webkit-user-select: none;
             user-select: none;
             -webkit-user-drag: none;
             pointer-events: none;
+        }
+
+        .viewer-page-caption {
+            margin-top: 0.4rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
         }
 
         .viewer-watermark-note {
@@ -119,18 +136,19 @@
             margin-top: 0.75rem;
         }
 
-        .viewer-loading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            min-height: 40vh;
-        }
-
         @media (max-width: 600px) {
             .viewer-toolbar { justify-content: center; }
             .viewer-stage { padding: 0.75rem; }
+        }
+
+        /* La sección del visor apila 34 páginas y es mucho más alta que cualquier
+           viewport: el sistema de aparición-al-hacer-scroll del sitio (IntersectionObserver
+           con threshold 0.05) nunca alcanza ese porcentaje de área visible en una sección
+           tan larga, así que se queda en opacity:0 para siempre. Se excluye de ese
+           comportamiento y se muestra siempre. */
+        #visor {
+            opacity: 1 !important;
+            transform: none !important;
         }
     </style>
 
@@ -215,9 +233,7 @@
                         </div>
                     </div>
 
-                    <div class="viewer-stage" id="viewer-stage" oncontextmenu="return false;">
-                        <img id="page-image" class="viewer-page-img" src="" alt="Página del proyecto de grado" draggable="false">
-                    </div>
+                    <div class="viewer-stage" id="viewer-stage" oncontextmenu="return false;"></div>
 
                     <p class="viewer-watermark-note">
                         Vista de solo lectura — documento oficial publicado en el
@@ -265,8 +281,8 @@
             var TOTAL_PAGES = 34;
             var BASE_PATH = '../assets/Images/projects/proyecto-grado/';
             var current = 1;
+            var pageEls = [];
 
-            var img = document.getElementById('page-image');
             var input = document.getElementById('page-input');
             var total = document.getElementById('page-total');
             var btnPrev = document.getElementById('btn-prev');
@@ -274,7 +290,6 @@
             var btnFirst = document.getElementById('btn-first');
             var btnLast = document.getElementById('btn-last');
             var stage = document.getElementById('viewer-stage');
-            var wrap = document.getElementById('viewer-wrap');
 
             total.textContent = TOTAL_PAGES;
             input.max = TOTAL_PAGES;
@@ -283,30 +298,45 @@
                 return n < 10 ? '0' + n : '' + n;
             }
 
-            function preload(n) {
-                if (n < 1 || n > TOTAL_PAGES) return;
-                var pre = new Image();
-                pre.src = BASE_PATH + 'page-' + pad(n) + '.jpg';
+            // Construye las 34 páginas apiladas para permitir scroll continuo,
+            // en vez de reemplazar una sola imagen en cada clic.
+            for (var i = 1; i <= TOTAL_PAGES; i++) {
+                var wrapper = document.createElement('div');
+                wrapper.className = 'viewer-page-wrapper';
+                wrapper.dataset.page = i;
+
+                var img = document.createElement('img');
+                img.className = 'viewer-page-img';
+                img.src = BASE_PATH + 'page-' + pad(i) + '.jpg';
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                img.width = 1105;
+                img.height = 1430;
+                img.alt = 'Página ' + i + ' del proyecto de grado';
+                img.draggable = false;
+                img.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+                var caption = document.createElement('p');
+                caption.className = 'viewer-page-caption';
+                caption.textContent = 'Página ' + i + ' de ' + TOTAL_PAGES;
+
+                wrapper.appendChild(img);
+                wrapper.appendChild(caption);
+                stage.appendChild(wrapper);
+                pageEls.push(wrapper);
             }
 
-            function render() {
-                img.src = BASE_PATH + 'page-' + pad(current) + '.jpg';
-                input.value = current;
+            function updateButtons() {
                 btnPrev.disabled = current <= 1;
                 btnFirst.disabled = current <= 1;
                 btnNext.disabled = current >= TOTAL_PAGES;
                 btnLast.disabled = current >= TOTAL_PAGES;
-                preload(current + 1);
-                preload(current - 1);
+                input.value = current;
             }
 
             function goTo(n) {
                 n = Math.max(1, Math.min(TOTAL_PAGES, n));
-                if (n !== current) {
-                    current = n;
-                    render();
-                    wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                pageEls[n - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
 
             btnPrev.addEventListener('click', function () { goTo(current - 1); });
@@ -320,19 +350,32 @@
             });
 
             document.addEventListener('keydown', function (e) {
+                if (document.activeElement === input) return;
                 if (e.key === 'ArrowLeft') goTo(current - 1);
                 if (e.key === 'ArrowRight') goTo(current + 1);
-            });
-
-            // Disuade el guardado rápido de la imagen por arrastre o menú contextual
-            img.addEventListener('dragstart', function (e) { e.preventDefault(); });
-            document.addEventListener('keydown', function (e) {
                 if ((e.ctrlKey || e.metaKey) && e.key === 's') {
                     e.preventDefault();
                 }
             });
 
-            render();
+            // Mientras el usuario hace scroll libremente, actualiza el indicador de
+            // página según qué página ocupa más área visible del viewport.
+            var observer = new IntersectionObserver(function (entries) {
+                var best = null;
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting && (!best || entry.intersectionRatio > best.intersectionRatio)) {
+                        best = entry;
+                    }
+                });
+                if (best) {
+                    current = parseInt(best.target.dataset.page, 10);
+                    updateButtons();
+                }
+            }, { threshold: [0.25, 0.5, 0.75] });
+
+            pageEls.forEach(function (el) { observer.observe(el); });
+
+            updateButtons();
         })();
     </script>
 </body>
