@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proyecto de Grado | Ismael Ruge Gonzalez</title>
+    <meta name="description" content="Visor del trabajo de grado de Ismael Ruge Gonzalez: 'Sistema Web MVC para automatizar copias de seguridad de bases de datos con programación de tareas y almacenamiento en la nube', Corporación Universitaria Remington.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ismaelruge.github.io/proyectos/proyecto-grado.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Proyecto de Grado — Ismael Ruge Gonzalez">
+    <meta property="og:description" content="Sistema Web MVC para automatizar copias de seguridad de bases de datos con programación de tareas y almacenamiento en la nube.">
+    <meta property="og:image" content="https://ismaelruge.github.io/assets/Images/projects/proyecto-grado/page-01.jpg">
+    <meta property="og:url" content="https://ismaelruge.github.io/proyectos/proyecto-grado.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="es_CO">
+
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        .viewer-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .viewer-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .viewer-nav-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .viewer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 0.5rem 0.9rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background var(--transition-fast), transform var(--transition-fast);
+        }
+
+        .viewer-btn:hover:not(:disabled) {
+            background: var(--bg-tertiary);
+        }
+
+        .viewer-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .viewer-page-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        .viewer-page-indicator input {
+            width: 3.2rem;
+            text-align: center;
+            padding: 0.35rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        .viewer-stage {
+            position: relative;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            min-height: 40vh;
+        }
+
+        .viewer-page-img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: var(--shadow-lg);
+            border-radius: 2px;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+
+        .viewer-watermark-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+        }
+
+        .viewer-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            min-height: 40vh;
+        }
+
+        @media (max-width: 600px) {
+            .viewer-toolbar { justify-content: center; }
+            .viewer-stage { padding: 0.75rem; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Thesis",
+        "name": "Sistema Web MVC para automatizar copias de seguridad de bases de datos con programación de tareas y almacenamiento en la nube",
+        "author": {
+            "@type": "Person",
+            "name": "Ismael Ruge Gonzalez",
+            "url": "https://ismaelruge.github.io/"
+        },
+        "url": "https://ismaelruge.github.io/proyectos/proyecto-grado.html",
+        "provider": {
+            "@type": "CollegeOrUniversity",
+            "name": "Corporación Universitaria Remington"
+        }
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Navegación -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Ismael Ruge</a>
+
+            <div class="nav-actions">
+                <a href="../index.html#education" class="nav-back-link">← Volver al portafolio</a>
+
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+                    </svg>
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="project-tags" style="justify-content: center; margin-bottom: 1rem;">
+                    <span class="skill-tag">Trabajo de Grado · 2025</span>
+                    <span class="skill-tag">Corporación Universitaria Remington</span>
+                </div>
+
+                <h1>Proyecto de Grado</h1>
+                <p class="subtitle">Sistema Web MVC para automatizar copias de seguridad de bases de datos con
+                    programación de tareas y almacenamiento en la nube</p>
+                <p style="color: var(--text-secondary); max-width: 640px; margin: 0 auto;">
+                    Visor de solo lectura del documento original. Este proyecto académico es la semilla de
+                    <a href="backuppro.html">BackupPro</a>, que sigo desarrollando hasta hoy.
+                </p>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="visor" style="padding-top: 2rem;">
+                <div class="viewer-wrap" id="viewer-wrap">
+                    <div class="viewer-toolbar">
+                        <div class="viewer-nav-group">
+                            <button id="btn-first" class="viewer-btn" aria-label="Primera página">⏮</button>
+                            <button id="btn-prev" class="viewer-btn" aria-label="Página anterior">← Anterior</button>
+                        </div>
+
+                        <div class="viewer-page-indicator">
+                            Página
+                            <input type="number" id="page-input" min="1" value="1">
+                            de <span id="page-total">34</span>
+                        </div>
+
+                        <div class="viewer-nav-group">
+                            <button id="btn-next" class="viewer-btn" aria-label="Página siguiente">Siguiente →</button>
+                            <button id="btn-last" class="viewer-btn" aria-label="Última página">⏭</button>
+                        </div>
+                    </div>
+
+                    <div class="viewer-stage" id="viewer-stage" oncontextmenu="return false;">
+                        <img id="page-image" class="viewer-page-img" src="" alt="Página del proyecto de grado" draggable="false">
+                    </div>
+
+                    <p class="viewer-watermark-note">
+                        Vista de solo lectura — documento oficial publicado en el
+                        <a href="https://repositorio.uniremington.edu.co/handle/123456789/8679" target="_blank" rel="noopener noreferrer">repositorio institucional de Uniremington</a>.
+                    </p>
+                </div>
+            </section>
+
+            <section id="acerca" style="padding-top: 1rem;">
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Software de Creación de Copias de Seguridad Automáticas</strong> — trabajo de grado
+                        presentado junto con Mónica María Córdoba Castrillón para optar al título de Ingeniero de
+                        Sistemas, aprobado y publicado en 2025. Propone un sistema web MVC para automatizar copias de
+                        seguridad de bases de datos con programación de tareas y almacenamiento en múltiples nubes.
+                    </p>
+                    <p>
+                        Ver también el <a href="backuppro.html">caso de estudio de BackupPro</a>, la evolución de este
+                        mismo proyecto más allá de la entrega académica.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Botón volver arriba -->
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V7.06l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z" clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ismael Ruge González. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+            <a href="../index.html" style="color: inherit; text-decoration: underline;">← Volver al portafolio</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
+    <script>
+        (function () {
+            var TOTAL_PAGES = 34;
+            var BASE_PATH = '../assets/Images/projects/proyecto-grado/';
+            var current = 1;
+
+            var img = document.getElementById('page-image');
+            var input = document.getElementById('page-input');
+            var total = document.getElementById('page-total');
+            var btnPrev = document.getElementById('btn-prev');
+            var btnNext = document.getElementById('btn-next');
+            var btnFirst = document.getElementById('btn-first');
+            var btnLast = document.getElementById('btn-last');
+            var stage = document.getElementById('viewer-stage');
+            var wrap = document.getElementById('viewer-wrap');
+
+            total.textContent = TOTAL_PAGES;
+            input.max = TOTAL_PAGES;
+
+            function pad(n) {
+                return n < 10 ? '0' + n : '' + n;
+            }
+
+            function preload(n) {
+                if (n < 1 || n > TOTAL_PAGES) return;
+                var pre = new Image();
+                pre.src = BASE_PATH + 'page-' + pad(n) + '.jpg';
+            }
+
+            function render() {
+                img.src = BASE_PATH + 'page-' + pad(current) + '.jpg';
+                input.value = current;
+                btnPrev.disabled = current <= 1;
+                btnFirst.disabled = current <= 1;
+                btnNext.disabled = current >= TOTAL_PAGES;
+                btnLast.disabled = current >= TOTAL_PAGES;
+                preload(current + 1);
+                preload(current - 1);
+            }
+
+            function goTo(n) {
+                n = Math.max(1, Math.min(TOTAL_PAGES, n));
+                if (n !== current) {
+                    current = n;
+                    render();
+                    wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            btnPrev.addEventListener('click', function () { goTo(current - 1); });
+            btnNext.addEventListener('click', function () { goTo(current + 1); });
+            btnFirst.addEventListener('click', function () { goTo(1); });
+            btnLast.addEventListener('click', function () { goTo(TOTAL_PAGES); });
+
+            input.addEventListener('change', function () {
+                var n = parseInt(input.value, 10);
+                if (!isNaN(n)) goTo(n);
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') goTo(current - 1);
+                if (e.key === 'ArrowRight') goTo(current + 1);
+            });
+
+            // Disuade el guardado rápido de la imagen por arrastre o menú contextual
+            img.addEventListener('dragstart', function (e) { e.preventDefault(); });
+            document.addEventListener('keydown', function (e) {
+                if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                    e.preventDefault();
+                }
+            });
+
+            render();
+        })();
+    </script>
+</body>
+</html>
