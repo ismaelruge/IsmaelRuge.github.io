@@ -30,7 +30,7 @@ Portafolio web profesional de Ismael Ruge Gonzalez, Ingeniero de Sistemas y Desa
 - **4+ años de experiencia** como Desarrollador Fullstack Senior
 - Especialización en **sistemas backend de alta concurrencia** e **interoperabilidad de sistemas médicos**
 - **113 certificaciones en Platzi** y promedio académico de **4.20/5.0**
-- Proyecto de grado **aprobado**, publicado en el repositorio institucional
+- Proyecto de grado **aprobado**, publicado en el repositorio institucional, y evolucionado hasta hoy como el proyecto de código abierto **[BackupPro](https://github.com/ismaelruge/BackupPro)**
 
 ### Diseño Moderno
 - ✅ Navegación fija con scroll-spy (resalta la sección activa) y menú hamburguesa en móvil
@@ -48,7 +48,8 @@ Portafolio web profesional de Ismael Ruge Gonzalez, Ingeniero de Sistemas y Desa
 - 📧 **Formulario de contacto funcional** (FormSubmit) con campo anti-spam (honeypot)
 - 📊 **Barras de progreso animadas** para idiomas
 - 🗂️ **Habilidades, Experiencia, Proyectos, Educación y Certificaciones en acordeón**, colapsados por defecto para una lectura más compacta
-- 🧪 **Página de caso de estudio** para el proyecto Bella Vita Spa (DemoSpa), con capturas, diseño, arquitectura y SEO explicados en detalle
+- 🧪 **Páginas de caso de estudio**: Bella Vita Spa (DemoSpa) con diseño, arquitectura y SEO explicados en detalle, y BackupPro con arquitectura, seguridad, pruebas y capturas reales de un flujo de backup ejecutado de punta a punta
+- 📖 **Visor propio del proyecto de grado** (imágenes por página con scroll continuo, sin botón de descarga ni clic derecho) en vez de enlazar directo a un PDF descargable
 - 🎯 **Smooth scroll** entre secciones
 - ⌨️ **Easter egg** con Konami Code
 
@@ -91,14 +92,18 @@ IsmaelRuge.github.io/
 ├── README.md                 # Este archivo
 │
 ├── proyectos/
-│   └── demo-spa.html         # Caso de estudio: Bella Vita Spa (DemoSpa)
+│   ├── demo-spa.html         # Caso de estudio: Bella Vita Spa (DemoSpa)
+│   ├── backuppro.html        # Caso de estudio: BackupPro
+│   └── proyecto-grado.html   # Visor de solo lectura del proyecto de grado
 │
 └── assets/
     ├── CV-IsmaelRuge.pdf     # Hoja de vida descargable
     └── Images/
         ├── Profile.png       # Foto de perfil
         └── projects/
-            └── demo-spa/      # Capturas del caso de estudio Bella Vita Spa
+            ├── demo-spa/      # Capturas del caso de estudio Bella Vita Spa
+            ├── backuppro/     # Capturas del caso de estudio BackupPro
+            └── proyecto-grado/ # Páginas del proyecto de grado, renderizadas como imágenes
 ```
 
 ## 🚀 Instalación Local
@@ -237,8 +242,8 @@ initNavigation();
 3. **Sobre Mí** — resumen profesional y objetivos.
 4. **Habilidades Técnicas** — 6 categorías en acordeón (lenguajes, frontend, backend, bases de datos, DevOps/Cloud, seguridad).
 5. **Experiencia Profesional** — Colcan (Desarrollador Senior Backend/Fullstack) y HAS SQL S.A.S, cada una colapsable.
-6. **Proyectos** — proyectos en acordeón: Bella Vita Spa (DemoSpa), landing page comercial con demo en vivo y [caso de estudio propio](proyectos/demo-spa.html) sobre diseño, arquitectura y SEO; además de proyectos personales de código privado (agendamiento para centro de estética, app Android con OCR/código de barras/voz para tienda de abarrotes).
-7. **Educación** — Ingeniería de Sistemas en Uniremington y proyecto de grado, cada uno colapsable por separado.
+6. **Proyectos** — proyectos en acordeón: BackupPro (código abierto, [caso de estudio propio](proyectos/backuppro.html) con arquitectura, seguridad y pruebas); Bella Vita Spa (DemoSpa), landing page comercial con demo en vivo y [caso de estudio propio](proyectos/demo-spa.html) sobre diseño, arquitectura y SEO; además de proyectos personales de código privado (agendamiento para centro de estética, app Android con OCR/código de barras/voz para tienda de abarrotes).
+7. **Educación** — Ingeniería de Sistemas en Uniremington y proyecto de grado (con [visor propio](proyectos/proyecto-grado.html) del documento y enlace a su evolución como BackupPro), cada uno colapsable por separado.
 8. **Certificaciones & Cursos** — 113 certificaciones de Platzi organizadas en un acordeón por categoría.
 9. **Idiomas** — Español (nativo), Inglés (B1).
 10. **Contacto** — formulario funcional con validación y protección anti-spam.
@@ -255,7 +260,8 @@ initNavigation();
 ## 🔗 Enlaces Importantes
 
 - **Portafolio**: [https://ismaelruge.github.io](https://ismaelruge.github.io)
-- **Proyecto de Grado**: [Repositorio Uniremington](https://repositorio.uniremington.edu.co/handle/123456789/8679)
+- **BackupPro**: [Código fuente en GitHub](https://github.com/ismaelruge/BackupPro) · [Caso de estudio](https://ismaelruge.github.io/proyectos/backuppro.html)
+- **Proyecto de Grado**: [Visor en el portafolio](https://ismaelruge.github.io/proyectos/proyecto-grado.html) · [Repositorio Uniremington](https://repositorio.uniremington.edu.co/handle/123456789/8679)
 - **Perfil Platzi**: [113 Certificaciones](https://platzi.com/p/ismaelruge/)
 
 ## 📝 Licencia
