@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Caso de estudio: BackupPro | Ismael Ruge Gonzalez</title>
+    <meta name="description" content="Caso de estudio del proyecto BackupPro: aplicación ASP.NET Core para programar y gestionar backups de bases de datos hacia múltiples destinos de almacenamiento, con cifrado de credenciales, restauración y pruebas automatizadas.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ismaelruge.github.io/proyectos/backuppro.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Caso de estudio: BackupPro">
+    <meta property="og:description" content="Aplicación ASP.NET Core para programar y gestionar backups de bases de datos hacia múltiples destinos de almacenamiento: arquitectura, seguridad y pruebas.">
+    <meta property="og:image" content="https://ismaelruge.github.io/assets/Images/projects/backuppro/dashboard.jpg">
+    <meta property="og:url" content="https://ismaelruge.github.io/proyectos/backuppro.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Caso de estudio: BackupPro">
+    <meta name="twitter:description" content="Aplicación ASP.NET Core para programar y gestionar backups de bases de datos hacia múltiples destinos de almacenamiento: arquitectura, seguridad y pruebas.">
+    <meta name="twitter:image" content="https://ismaelruge.github.io/assets/Images/projects/backuppro/dashboard.jpg">
+
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "BackupPro",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, Linux",
+        "author": {
+            "@type": "Person",
+            "name": "Ismael Ruge Gonzalez",
+            "url": "https://ismaelruge.github.io/"
+        },
+        "about": "Aplicación web para programar y gestionar backups de bases de datos hacia distintos destinos de almacenamiento",
+        "url": "https://ismaelruge.github.io/proyectos/backuppro.html",
+        "image": "https://ismaelruge.github.io/assets/Images/projects/backuppro/dashboard.jpg"
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Navegación -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Ismael Ruge</a>
+
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="nav-back-link">← Volver al portafolio</a>
+
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+                    </svg>
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero del caso de estudio -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="project-tags" style="justify-content: center; margin-bottom: 1rem;">
+                    <span class="skill-tag">ASP.NET Core 10 MVC</span>
+                    <span class="skill-tag">Entity Framework Core</span>
+                    <span class="skill-tag">ASP.NET Identity</span>
+                </div>
+
+                <h1>BackupPro</h1>
+                <p class="subtitle">Programación y gestión de backups de bases de datos hacia múltiples destinos</p>
+                <p style="color: var(--text-secondary); max-width: 640px; margin: 0 auto;">
+                    Caso de estudio de una aplicación full stack real: 7 motores de base de datos, 7 destinos de
+                    almacenamiento, cifrado de credenciales, restauración con auditoría propia y 88 pruebas
+                    automatizadas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Datos clave -->
+        <section class="stats-bar" id="datos-clave">
+            <div class="container stats-bar-grid">
+                <div class="stat-box">
+                    <span class="stat-number">7 + 7</span>
+                    <span class="stat-label">Motores de BD y destinos de almacenamiento</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">88</span>
+                    <span class="stat-label">Pruebas automatizadas (xUnit + Moq)</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">AES-256-GCM</span>
+                    <span class="stat-label">Cifrado de credenciales con Argon2id</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Flujo de backup validado de punta a punta</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <!-- Contexto -->
+            <section id="contexto">
+                <h2 class="section-title">Contexto y objetivo</h2>
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        <strong>BackupPro</strong> nació de un problema muy concreto que viví en un rol anterior:
+                        administrar copias de seguridad de bases de datos dispersas en distintos motores y clientes,
+                        a mano, sin un panel central. La aplicación resuelve eso — programar, ejecutar, monitorear y
+                        restaurar backups de bases de datos desde una única interfaz web, sin depender de scripts
+                        sueltos ni tareas de Windows/cron desconectadas entre sí.
+                    </p>
+                    <p>
+                        Es un proyecto personal de código completo (no un mockup): incluye autenticación real,
+                        cifrado de credenciales, un servicio en segundo plano que ejecuta backups automáticamente,
+                        retención automática de backups antiguos, restauración con auditoría, y una suite de pruebas
+                        que cubre la lógica de negocio crítica.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Funcionalidad -->
+            <section id="funcionalidad">
+                <h2 class="section-title">Qué hace</h2>
+                <div class="card">
+                    <ul class="case-list">
+                        <li><strong>7 motores de base de datos:</strong> SQL Server, MySQL, MariaDB, PostgreSQL,
+                            MongoDB, SQLite y Oracle — cada uno con su propio <code>IDatabaseBackupProvider</code>.</li>
+                        <li><strong>7 destinos de almacenamiento:</strong> disco local, FTP, SFTP, Azure Blob Storage,
+                            Amazon S3, Google Drive y OneDrive (estos dos últimos vía OAuth2, con exploración de
+                            carpetas del lado servidor sin exponer el token al cliente).</li>
+                        <li><strong>Programador de tareas:</strong> ejecución manual desde la interfaz o automática
+                            por minutos/horas/días mediante un <code>BackgroundService</code> que revisa tareas
+                            vencidas cada minuto — no requiere que nadie entre a la app para que corran.</li>
+                        <li><strong>Retención automática ("3x6"):</strong> borra backups de más de 6 meses por cada
+                            combinación de base de datos + destino, siempre que queden al menos 3 backups recientes
+                            como respaldo mínimo.</li>
+                        <li><strong>Restauración con confirmación explícita:</strong> operación destructiva que exige
+                            escribir el nombre exacto de la base de datos y reingresar la contraseña antes de
+                            ejecutarse; cada intento (exitoso o no) queda en un historial de auditoría que nunca se
+                            borra automáticamente.</li>
+                        <li><strong>Asistente de primer arranque:</strong> un usuario temporal <code>admin</code>
+                            (solo accesible desde el propio equipo) fuerza la creación del administrador definitivo
+                            antes de habilitar el resto de la aplicación.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seguridad -->
+            <section id="seguridad">
+                <h2 class="section-title">Seguridad</h2>
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        Las contraseñas de bases de datos, credenciales FTP, connection strings y tokens OAuth se
+                        cifran antes de guardarse (<code>CredentialProtector</code>):
+                    </p>
+                    <ul class="case-list">
+                        <li><strong>Derivación de clave con Argon2id</strong> (memory-hard, resistente a fuerza
+                            bruta) a partir de una clave maestra de 256 bits.</li>
+                        <li><strong>Cifrado autenticado AES-256-GCM</strong>, con sal y nonce distintos en cada valor
+                            — el mismo texto plano nunca produce el mismo resultado dos veces.</li>
+                        <li><strong>Ningún endpoint devuelve el secreto real al navegador:</strong> al editar una
+                            configuración, el campo de contraseña se muestra vacío; explorar carpetas de Google
+                            Drive/OneDrive se resuelve del lado servidor.</li>
+                        <li><strong>Contraseñas de <code>mysqldump</code>/<code>mongodump</code> vía archivo temporal
+                            de credenciales</strong> (no como argumento de línea de comandos), para que no queden
+                            visibles en la lista de procesos del sistema.</li>
+                        <li><strong>Rate limiting en login</strong> (5 intentos por minuto por IP) además del
+                            bloqueo de cuenta de ASP.NET Identity tras intentos fallidos consecutivos.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Arquitectura -->
+            <section id="arquitectura">
+                <h2 class="section-title">Arquitectura técnica</h2>
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        Un único proyecto ASP.NET Core MVC organizado en capas lógicas por carpeta, con un patrón de
+                        <strong>providers intercambiables</strong> para poder agregar un motor de base de datos o un
+                        destino de almacenamiento nuevo escribiendo solo la clase correspondiente e inscribiéndola en
+                        <code>Program.cs</code>, sin tocar el resto de la aplicación.
+                    </p>
+                    <div class="project-tags" style="margin-bottom: 1rem;">
+                        <span class="skill-tag">ASP.NET Core Identity</span>
+                        <span class="skill-tag">Entity Framework Core + SQLite</span>
+                        <span class="skill-tag">BackgroundService</span>
+                        <span class="skill-tag">OAuth2 (Google / Microsoft)</span>
+                        <span class="skill-tag">xUnit + Moq + EF Core InMemory</span>
+                        <span class="skill-tag">GitHub Actions (CI)</span>
+                    </div>
+                    <ul class="case-list">
+                        <li><strong>Providers de backup:</strong> <code>IDatabaseBackupProvider</code> e
+                            <code>IStorageProvider</code>, una implementación por motor/destino, resueltos en
+                            tiempo de ejecución por <code>BackupProviderRegistry</code>.</li>
+                        <li><strong>Orquestación:</strong> <code>BackupExecutionService</code> genera el backup y lo
+                            sube, compartido tanto por el botón "Ejecutar" manual como por el servicio automático.</li>
+                        <li><strong>Modelo de datos:</strong> EF Core sobre SQLite, con migraciones aplicadas
+                            automáticamente al iniciar — no requiere un motor de base de datos externo para correr.</li>
+                        <li><strong>Recorte de espacios en blanco centralizado:</strong> un
+                            <code>TrimmingModelBinder</code> registrado una sola vez en <code>Program.cs</code> evita
+                            repetir <code>.Trim()</code> en cada controlador (excepto en contraseñas).</li>
+                        <li><strong>CI:</strong> GitHub Actions compila y corre la suite de pruebas en cada push/PR.</li>
+                    </ul>
+                    <p style="margin-top: 1rem; color: var(--text-secondary);">
+                        Un matiz honesto (documentado en el propio README del proyecto): no es una arquitectura
+                        N-Tier estricta — los controladores de CRUD de cada tipo de base de datos/almacenamiento
+                        siguen accediendo directamente al <code>DbContext</code>. El refactor a providers se enfocó
+                        en la lógica de <em>ejecutar</em> un backup, que sí estaba duplicada en cada controlador.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Pruebas y validación -->
+            <section id="pruebas">
+                <h2 class="section-title">Pruebas y validación</h2>
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        Antes de tomar las capturas de este caso de estudio, cloné el repositorio en un entorno
+                        limpio, instalé el SDK de .NET 10 y verifiqué que el proyecto compila y pasa sus pruebas sin
+                        intervención manual:
+                    </p>
+                    <ul class="case-list">
+                        <li><code>dotnet build</code> — compila sin errores (solo advertencias esperables por APIs
+                            específicas de Windows usadas condicionalmente, como los permisos NTFS de SQL Server).</li>
+                        <li><code>dotnet test</code> — <strong>88 pruebas, 0 fallidas</strong>, cubriendo
+                            <code>BackupFrequencyCalculator</code>, <code>BackupProviderRegistry</code>,
+                            <code>BackupExecutionService</code>, <code>BackupRetentionService</code> (los distintos
+                            escenarios de la política "3x6"), <code>BackupRestoreService</code>,
+                            <code>CredentialProtector</code> y <code>SetupState</code>, todo con providers simulados
+                            (sin depender de un motor de base de datos real).</li>
+                        <li><strong>Flujo end-to-end real, sin mocks:</strong> completé el asistente de primer
+                            arranque, configuré un destino de almacenamiento local y una base de datos SQLite de
+                            prueba, programé una tarea y la ejecuté manualmente — el backup se generó de verdad en
+                            disco y quedó registrado en el historial con estado "Exitoso".</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Galería de capturas -->
+            <section id="capturas">
+                <h2 class="section-title">Capturas de pantalla</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Recorrido por la aplicación: desde la página pública hasta un backup real ejecutado de punta a
+                    punta.
+                </p>
+
+                <div class="shots-grid">
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/backuppro/landing.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/backuppro/landing.jpg" alt="Página pública de bienvenida de BackupPro" loading="lazy">
+                        </a>
+                        <figcaption>Página pública — sin sesión iniciada</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/backuppro/setup-admin.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/backuppro/setup-admin.jpg" alt="Asistente de configuración del administrador definitivo" loading="lazy">
+                        </a>
+                        <figcaption>Asistente de primer arranque — crea el admin definitivo</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/backuppro/dashboard.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/backuppro/dashboard.jpg" alt="Panel principal de BackupPro ya autenticado" loading="lazy">
+                        </a>
+                        <figcaption>Panel principal, ya autenticado</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/backuppro/database-types.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/backuppro/database-types.jpg" alt="Selector de los 7 motores de base de datos soportados" loading="lazy">
+                        </a>
+                        <figcaption>7 motores de base de datos soportados</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/backuppro/storage-types.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/backuppro/storage-types.jpg" alt="Selector de los 7 destinos de almacenamiento soportados" loading="lazy">
+                        </a>
+                        <figcaption>7 destinos de almacenamiento soportados</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/backuppro/sqlite-db-added.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/backuppro/sqlite-db-added.jpg" alt="Configuración de una base de datos SQLite registrada" loading="lazy">
+                        </a>
+                        <figcaption>Base de datos SQLite configurada</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/backuppro/task-scheduler.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/backuppro/task-scheduler.jpg" alt="Tarea programada ya ejecutada, con próxima ejecución calculada" loading="lazy">
+                        </a>
+                        <figcaption>Tarea programada — ya ejecutada, con próxima corrida calculada</figcaption>
+                    </figure>
+
+                    <figure class="shot-card">
+                        <a href="../assets/Images/projects/backuppro/backup-history.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/Images/projects/backuppro/backup-history.jpg" alt="Historial de backups con un registro exitoso real" loading="lazy">
+                        </a>
+                        <figcaption>Historial de backups — 100% de éxito, backup real generado</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Rol y aprendizajes -->
+            <section id="rol">
+                <h2 class="section-title">Mi rol y aprendizajes</h2>
+                <div class="card">
+                    <p style="margin-bottom: 1rem;">
+                        Diseñé y construí toda la aplicación: modelo de datos, los 14 providers de backup/almacenamiento,
+                        el cifrado de credenciales, el servicio de ejecución automática, la política de retención,
+                        el flujo de restauración con auditoría y la suite de pruebas.
+                    </p>
+                    <p>
+                        El aprendizaje más reutilizable fue diseñar alrededor de interfaces (<code>IDatabaseBackupProvider</code>,
+                        <code>IStorageProvider</code>) desde el principio: agregar Oracle, MariaDB, SQLite, Amazon S3
+                        y SFTP en iteraciones posteriores fue escribir una clase nueva por cada uno, sin tocar la
+                        lógica de ejecución, la programación de tareas ni la interfaz del historial.
+                    </p>
+                </div>
+
+                <p style="text-align: center; margin-top: 1.5rem;">
+                    <a href="../index.html#contact" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">
+                        ¿Quieres conocer más detalles técnicos de este proyecto? Escríbeme →
+                    </a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Botón volver arriba -->
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V7.06l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z" clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ismael Ruge González. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+            <a href="../index.html" style="color: inherit; text-decoration: underline;">← Volver al portafolio</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
+</body>
+</html>
