@@ -174,7 +174,7 @@
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
     <!-- Navegación -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Navegación del caso de estudio">
         <div class="nav-container">
             <a href="../index.html" class="nav-brand">Ismael Ruge</a>
 
@@ -193,7 +193,7 @@
         </div>
     </nav>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
         <!-- Hero -->
         <section class="hero" id="hero">
             <div class="hero-content">
@@ -336,7 +336,8 @@
 
             function goTo(n) {
                 n = Math.max(1, Math.min(TOTAL_PAGES, n));
-                pageEls[n - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                pageEls[n - 1].scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'start' });
             }
 
             btnPrev.addEventListener('click', function () { goTo(current - 1); });
