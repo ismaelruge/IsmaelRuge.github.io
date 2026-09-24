@@ -54,10 +54,6 @@ GitHub Pages publica desde `master`. Revisar y fusionar el pull request del redi
 
 El código fuente está bajo licencia [MIT](LICENSE). El contenido personal, fotografía, capturas y hoja de vida no están cubiertos por esa licencia.
 
-## Revisión automática
-
-El workflow `Portfolio review` ejecuta Chromium en 320, 390, 768, 1024 y 1440 px. Comprueba desbordamiento horizontal, errores de JavaScript, visibilidad sin JavaScript, navegación por teclado y móvil, persistencia de tema y respuestas simuladas del formulario. Guarda capturas y el sitio estático en el artefacto `portfolio-review`.
-
 ## Vista previa en Netlify
 
 `netlify.toml` genera `dist/` desde una lista explícita de archivos. La vista previa incluye `X-Robots-Tag: noindex, nofollow` y un robots.txt que impide el rastreo; los canonical siguen apuntando al sitio público. Esta configuración no publica cambios en GitHub Pages.
