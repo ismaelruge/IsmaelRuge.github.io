@@ -1,0 +1,40 @@
+name: Portfolio review
+on:
+  push:
+    branches:
+      - redesign/portfolio-clientes-reclutadores
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-review-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  browser-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install review tools
+        run: python -m pip install playwright==1.55.0
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Build static preview
+        run: python scripts/build_site.py --preview
+      - name: Check responsive layout and interactions
+        run: python scripts/check_portfolio.py
+      - name: Save preview and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-review
+          path: |
+            test-results/
+            dist/
+          retention-days: 14
