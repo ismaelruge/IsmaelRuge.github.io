@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Título y SEO -->
-    <title>Ismael Ruge Gonzalez | Ingeniero de Sistemas y Full Stack Senior</title>
+    <title>Ismael Ruge | Desarrollo de software, .NET e integraciones</title>
 
-    <meta name="description" content="Portafolio de Ismael Ruge Gonzalez, Ingeniero de Sistemas y desarrollador fullstack senior especializado en sistemas backend de alta concurrencia.">
+    <meta name="description" content="Desarrollo software a medida, conecto sistemas y optimizo procesos de negocio. Ismael Ruge, ingeniero de sistemas y desarrollador senior en .NET, Angular y Azure.">
     <meta name="keywords" content="Ismael Ruge, ingeniero de sistemas, desarrollador fullstack senior, backend senior, C#, .NET, Angular, Azure, React, Node.js, programador Colombia, desarrollador remoto">
     <meta name="author" content="Ismael Ruge Gonzalez">
     <meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
 
     <!-- Open Graph (para redes sociales) -->
     <meta property="og:title" content="Ismael Ruge Gonzalez | Ingeniero de Sistemas y Full Stack Senior">
-    <meta property="og:description" content="Portafolio de Ismael Ruge Gonzalez, Ingeniero de Sistemas y desarrollador fullstack senior especializado en sistemas backend de alta concurrencia.">
+    <meta property="og:description" content="Desarrollo software a medida, conecto sistemas y optimizo procesos de negocio. Ismael Ruge, ingeniero de sistemas y desarrollador senior en .NET, Angular y Azure.">
     <meta property="og:image" content="https://ismaelruge.github.io/assets/Images/Profile.png">
     <meta property="og:url" content="https://ismaelruge.github.io/">
     <meta property="og:type" content="website">
@@ -32,7 +32,8 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="styles.css">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="portfolio.css">
 
     <!-- Datos estructurados para buscadores -->
     <script type="application/ld+json">
@@ -65,978 +66,111 @@
     </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
-    <!-- Navegación -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-brand">Ismael Ruge</a>
-
-            <div class="nav-menu" id="nav-menu">
-                <a href="#about" class="nav-link">Sobre mí</a>
-                <a href="#skills" class="nav-link">Habilidades</a>
-                <a href="#experience" class="nav-link">Experiencia</a>
-                <a href="#projects" class="nav-link">Proyectos</a>
-                <a href="#education" class="nav-link">Educación</a>
-                <a href="#certifications" class="nav-link">Certificaciones</a>
-                <a href="#contact" class="nav-link">Contacto</a>
-            </div>
-
-            <div class="nav-actions">
-                <!-- Toggle de Tema Claro/Oscuro -->
-                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-                    </svg>
-                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
-                        <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" />
-                    </svg>
-                </button>
-
-                <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <img src="assets/Images/Profile.png" alt="Ismael Ruge Gonzalez" class="profile-image">
-            <h1>Ismael Ruge Gonzalez</h1>
-            <p class="subtitle">Ingeniero de Sistemas · Desarrollador Fullstack Senior</p>
-            <p class="location">📍 Yopal, Colombia</p>
-
-            <div class="hero-cta">
-                <a href="assets/CV-IsmaelRuge.pdf" download class="btn btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 3a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3.75A.75.75 0 0112 3zM3.75 15a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h12a1.5 1.5 0 001.5-1.5v-2.25a.75.75 0 011.5 0v2.25a3 3 0 01-3 3h-12a3 3 0 01-3-3v-2.25a.75.75 0 01.75-.75z" />
-                    </svg>
-                    Descargar CV
-                </a>
-                <a href="#contact" class="btn btn-outline">Contáctame</a>
-            </div>
-
-            <div class="contact-info">
-                <a href="mailto:ismaelruge@gmail.com" class="contact-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-                        <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-                    </svg>
-                    ismaelruge@gmail.com
-                </a>
-                <a href="tel:+573134112918" class="contact-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
-                    </svg>
-                    +57 313 411 2918
-                </a>
-            </div>
-
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/ismaelruge" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/ismaelruge" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://platzi.com/p/ismaelruge/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Platzi - 113 Certificaciones">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M10.6392 1.127L2.42569 9.34052C0.917267 10.8489 0.917267 13.287 2.42569 14.7954L9.51138 21.8811C9.97552 22.3452 10.6054 22.6045 11.2353 22.6045C11.8651 22.6045 12.495 22.3452 12.9254 21.8811L21.139 13.6675C22.6474 12.1591 22.6474 9.72103 21.139 8.21261L14.0533 1.127C13.1229 0.19656 11.5696 0.19656 10.6392 1.127ZM11.2353 16.5344L6.6308 11.93L11.2353 7.32552L15.8397 11.93L11.2353 16.5344Z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Datos Clave -->
-    <section class="stats-bar" aria-label="Datos clave">
-        <div class="container stats-bar-grid">
-            <div class="stat-box">
-                <span class="stat-number">4+</span>
-                <span class="stat-label">Años de Experiencia</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">Alta Concurrencia</span>
-                <span class="stat-label">Sistemas Backend Críticos</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">113</span>
-                <span class="stat-label">Certificaciones Platzi</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">4.20</span>
-                <span class="stat-label">Promedio Académico</span>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <!-- Sobre Mí / Objetivo -->
-        <section id="about">
-            <h2 class="section-title">Sobre Mí</h2>
-            <div class="card">
-                <div class="about-content">
-                    <p>
-                        Ingeniero de Sistemas y Desarrollador Fullstack Senior con <strong>4+ años de experiencia</strong> en sistemas backend de
-                        alta concurrencia e <strong>interoperabilidad de sistemas médicos</strong>. Actualmente lidero el desarrollo de un
-                        <strong style="color: var(--primary-color);">sistema de gestión de casos y resultados de patología</strong>, y antes diseñé
-                        un Bus de Datos que amplió la interoperabilidad hacia clientes en México y Ecuador.
-                        Stack técnico: <strong>.NET Core, Angular, SQL Server, MongoDB, PostgreSQL, Redis y Azure</strong>.
-                    </p>
-                    <p style="margin-top: 1rem;">
-                        Mi enfoque está en la <strong>optimización, escalabilidad y calidad del código</strong>: aplico principios SOLID,
-                        patrones de diseño y buenas prácticas para resolver problemas técnicos complejos con soluciones bien estructuradas.
-                    </p>
-                </div>
-
-                <div class="objectives-grid">
-                    <div class="objective-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
-                            <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z" />
-                            <path d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z" />
-                        </svg>
-                        <h4>Crecimiento Profesional</h4>
-                        <p>Avanzar hacia posiciones senior y tech lead, liderando proyectos de alto impacto</p>
-                    </div>
-                    <div class="objective-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path fill-rule="evenodd" d="M2.25 6a3 3 0 013-3h13.5a3 3 0 013 3v12a3 3 0 01-3 3H5.25a3 3 0 01-3-3V6zm3.97.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 01-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06zm4.28 4.28a.75.75 0 000 1.5h5.25a.75.75 0 000-1.5H10.5z" clip-rule="evenodd" />
-                        </svg>
-                        <h4>Proyectos Desafiantes</h4>
-                        <p>Participar en proyectos técnicamente complejos que generen impacto real</p>
-                    </div>
-                    <div class="objective-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.754 9.754 0 016.116-3.985z" />
-                        </svg>
-                        <h4>Oportunidades Remotas</h4>
-                        <p>Interesado en posiciones remotas a nivel internacional con equipos diversos</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Habilidades Técnicas -->
-        <section id="skills">
-            <h2 class="section-title">Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <details class="cert-category skill-category" name="skills-accordion">
-                    <summary><span>💻 Lenguajes</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <ul>
-                        <li>JavaScript / TypeScript</li>
-                        <li>C#</li>
-                        <li>SQL</li>
-                        <li>PHP</li>
-                        <li>HTML5 / CSS3</li>
-                        <li>Java / Kotlin</li>
-                    </ul>
-                </details>
-
-                <details class="cert-category skill-category" name="skills-accordion">
-                    <summary><span>🎨 Frontend</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <ul>
-                        <li>React</li>
-                        <li>Angular</li>
-                        <li>Bootstrap</li>
-                        <li>Material Design</li>
-                        <li>Progressive Web Apps (PWA)</li>
-                    </ul>
-                </details>
-
-                <details class="cert-category skill-category" name="skills-accordion">
-                    <summary><span>⚙️ Backend</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <ul>
-                        <li>.NET Core (ASP.NET Core, Web API, MVC)</li>
-                        <li>Entity Framework / Dapper</li>
-                        <li>Node.js / Express.js</li>
-                        <li>SignalR / Socket.io</li>
-                        <li>APIs REST y SOAP</li>
-                        <li>WebSockets</li>
-                        <li>Manejo de concurrencia, locks y background jobs</li>
-                    </ul>
-                </details>
-
-                <details class="cert-category skill-category" name="skills-accordion">
-                    <summary><span>🗄️ Bases de Datos</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <ul>
-                        <li>SQL Server</li>
-                        <li>PostgreSQL</li>
-                        <li>MongoDB</li>
-                        <li>Redis (caché)</li>
-                        <li>MySQL / MariaDB</li>
-                        <li>SQLite</li>
-                    </ul>
-                </details>
-
-                <details class="cert-category skill-category" name="skills-accordion">
-                    <summary><span>☁️ DevOps & Cloud</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <ul>
-                        <li>Azure (App Services, Blob Storage, SQL)</li>
-                        <li>Azure DevOps</li>
-                        <li>Docker</li>
-                        <li>IIS</li>
-                        <li>CI/CD con GitHub Actions</li>
-                    </ul>
-                </details>
-
-                <details class="cert-category skill-category" name="skills-accordion">
-                    <summary><span>🔒 Seguridad & Otros</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <ul>
-                        <li>JWT / OAuth2</li>
-                        <li>SHA256 / CORS</li>
-                        <li>Arquitectura MVC / Multitenant</li>
-                        <li>Git / Jira / SCRUM</li>
-                        <li>Swagger/OpenAPI / Postman</li>
-                    </ul>
-                </details>
-            </div>
-        </section>
-
-        <!-- Experiencia Profesional -->
-        <section id="experience">
-            <h2 class="section-title">Experiencia Profesional</h2>
-
-            <div class="timeline">
-                <details class="timeline-item cert-category" name="experience-accordion">
-                    <summary>
-                        <div class="timeline-header">
-                            <h4><span class="timeline-company">Colcan</span> - Bogotá (Remoto)</h4>
-                            <p class="timeline-date">Diciembre 2023 – Actualidad (<span id="colcan-duration">Calculando...</span>)</p>
-                        </div>
-                        <svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg>
-                    </summary>
-                    <div class="timeline-panel">
-                    <p style="font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Desarrollador Senior Backend / Fullstack</p>
-
-                    <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1rem; border-left: 4px solid var(--primary-color);">
-                        <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">🚀 Logro Principal:</p>
-                        <p style="color: var(--text-secondary);">
-                            Lidero actualmente el desarrollo de un <strong style="color: var(--primary-color);">sistema de gestión de casos y resultados
-                            de patología</strong>, con arquitecturas backend de alta concurrencia, mecanismos de caché, control de concurrencia y
-                            reintentos que garantizan estabilidad en producción.
-                        </p>
-                    </div>
-
-                    <div class="timeline-description">
-                        <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Responsabilidades y Logros Técnicos:</p>
-                        <ul>
-                            <li><strong>Interoperabilidad médica:</strong> Desarrollo de sistema de integración entre múltiples dispositivos médicos (analizadores clínicos), gestionando homologaciones, validaciones e interpretación de resultados</li>
-                            <li><strong>Liderazgo de proyecto actual:</strong> Lidero el desarrollo de un sistema de gestión de casos y resultados de patología, a cargo de las decisiones técnicas y la coordinación del equipo</li>
-                            <li><strong>Bus de Datos genérico (entregado):</strong> Diseño y desarrollo de un Bus de Datos para la integración de múltiples APIs externas, que facilitó la interoperabilidad con clientes nacionales e internacionales (México y Ecuador)</li>
-                            <li><strong>Arquitectura de alta concurrencia:</strong> Implementación de servicios capaces de manejar grandes picos de eventos por segundo, manteniendo estabilidad y consistencia</li>
-                            <li><strong>Liderazgo técnico:</strong> Coordinación de hasta 3 desarrolladores, revisión de código (code review) y aprobación de Pull Requests</li>
-                            <li><strong>Optimización de procesos críticos:</strong> Reducción de tiempos de ejecución de minutos a segundos mediante reingeniería de procesos backend</li>
-                            <li><strong>Resiliencia y control:</strong> Mecanismos de reintento, control de errores, concurrencia, locks y caché con Redis</li>
-                            <li><strong>Bases de datos:</strong> Diseño y optimización avanzada en SQL Server, MongoDB y PostgreSQL (índices, pipelines, consultas complejas)</li>
-                            <li><strong>Observabilidad:</strong> Logs centralizados y monitoreo mediante Azure Blob Storage y bases de datos NoSQL</li>
-                            <li><strong>Disponibilidad on-call:</strong> Atención de incidentes críticos en producción</li>
-                        </ul>
-                    </div>
-
-                    <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(59, 130, 246, 0.05); border-radius: var(--radius-sm); border: 1px solid rgba(59, 130, 246, 0.2);">
-                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
-                            <strong style="color: var(--primary-color);">Impacto:</strong> Reducción de tiempos de procesamiento de minutos a segundos,
-                            arquitectura backend estable bajo alta concurrencia y expansión de la interoperabilidad hacia clientes internacionales
-                            (México y Ecuador).
-                        </p>
-                    </div>
-
-                    <div class="timeline-skills">
-                        <span class="skill-tag">Angular</span>
-                        <span class="skill-tag">.NET Core</span>
-                        <span class="skill-tag">SQL Server</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">APIs REST</span>
-                        <span class="skill-tag">SignalR</span>
-                        <span class="skill-tag">Sistemas de Patología</span>
-                        <span class="skill-tag">Bus de Datos</span>
-                        <span class="skill-tag">Alta Concurrencia</span>
-                        <span class="skill-tag">Code Review</span>
-                        <span class="skill-tag">Liderazgo</span>
-                    </div>
-                    </div>
-                </details>
-
-                <details class="timeline-item cert-category" name="experience-accordion">
-                    <summary>
-                        <div class="timeline-header">
-                            <h4><span class="timeline-company">HAS SQL S.A.S</span> - Duitama</h4>
-                            <p class="timeline-date">Marzo 2022 – Diciembre 2023 (21 meses)</p>
-                        </div>
-                        <svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg>
-                    </summary>
-                    <div class="timeline-panel">
-                    <p style="font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">Desarrollador Backend / Fullstack</p>
-                    <div class="timeline-description">
-                        <ul>
-                            <li>Desarrollo de sistemas empresariales desde cero y evolución de plataformas existentes</li>
-                            <li><strong>Migración de sistemas legados:</strong> Migración completa de sistemas heredados (VB / Access 2000 / PHP legacy) a .NET Core MVC</li>
-                            <li>Diseño y administración de bases de datos SQL Server desde cero para sistemas legales, presupuestales y de nómina</li>
-                            <li>Desarrollo del software principal de gestión de soporte técnico, actualmente en uso productivo</li>
-                            <li>Integración con pasarelas de pago, bancos y sistemas externos</li>
-                            <li>Gestión de despliegues, servidores y bases de datos de clientes</li>
-                            <li>Implementación de validaciones, licenciamiento, auditoría y copias de seguridad automatizadas</li>
-                            <li><strong>Resolución de incidentes críticos</strong>, incluyendo recuperación de datos tras un ataque al servidor</li>
-                            <li>Liderazgo y mentoría de un desarrollador junior</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-skills">
-                        <span class="skill-tag">HTML/CSS/JS</span>
-                        <span class="skill-tag">.NET Core MVC</span>
-                        <span class="skill-tag">Bootstrap</span>
-                        <span class="skill-tag">SQL Server</span>
-                        <span class="skill-tag">JWT</span>
-                        <span class="skill-tag">IIS</span>
-                        <span class="skill-tag">APIs REST</span>
-                        <span class="skill-tag">Migración de Legados</span>
-                        <span class="skill-tag">Mentoría</span>
-                    </div>
-                    </div>
-                </details>
-            </div>
-        </section>
-
-        <!-- Proyectos -->
-        <section id="projects">
-            <h2 class="section-title">Proyectos</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                Proyectos personales y comerciales. Algunos son de código abierto; en los que no, con gusto comparto
-                detalles técnicos, arquitectura y demo en una entrevista.
-            </p>
-
-            <div class="projects-grid">
-                <details class="cert-category project-card" name="projects-accordion">
-                    <summary>
-                        <span class="project-header">
-                            <h4>BackupPro — Gestión de Backups de Bases de Datos</h4>
-                            <span class="project-badge">Caso de Estudio</span>
-                        </span>
-                        <svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg>
-                    </summary>
-                    <div class="project-panel">
-                        <a href="proyectos/backuppro.html">
-                            <img src="assets/Images/projects/backuppro/dashboard.jpg" alt="Panel principal de BackupPro" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-md);" loading="lazy">
-                        </a>
-                        <p class="project-description">
-                            Aplicación ASP.NET Core MVC (.NET 10) para programar y gestionar backups de bases de datos
-                            hacia múltiples destinos de almacenamiento: 7 motores de BD (SQL Server, MySQL, MariaDB,
-                            PostgreSQL, MongoDB, SQLite, Oracle) y 7 destinos (local, FTP, SFTP, Azure Blob, Amazon S3,
-                            Google Drive, OneDrive). Incluye programación automática de tareas, retención y
-                            restauración con auditoría, cifrado de credenciales (Argon2id + AES-256-GCM) y 88 pruebas
-                            automatizadas. Nació como mi <strong>proyecto de grado</strong> y desde entonces lo he
-                            seguido evolucionando. Validé la compilación, la suite de pruebas y un flujo de backup
-                            real de punta a punta antes de publicar este caso de estudio.
-                        </p>
-                        <div class="project-tags">
-                            <span class="skill-tag">.NET Core / ASP.NET Core MVC</span>
-                            <span class="skill-tag">Entity Framework Core</span>
-                            <span class="skill-tag">ASP.NET Identity</span>
-                            <span class="skill-tag">xUnit / Moq</span>
-                            <span class="skill-tag">Cifrado AES-256-GCM</span>
-                            <span class="skill-tag">GitHub Actions (CI)</span>
-                            <span class="skill-tag">Código Abierto</span>
-                        </div>
-                        <div class="case-links">
-                            <a href="proyectos/backuppro.html" class="btn">Ver caso de estudio →</a>
-                            <a href="https://github.com/ismaelruge/BackupPro" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver código fuente ↗</a>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category project-card" name="projects-accordion">
-                    <summary>
-                        <span class="project-header">
-                            <h4>Bella Vita Spa — Landing Page para Spa &amp; Salón de Belleza</h4>
-                            <span class="project-badge">Demo en Vivo</span>
-                        </span>
-                        <svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg>
-                    </summary>
-                    <div class="project-panel">
-                        <a href="proyectos/demo-spa.html">
-                            <img src="assets/Images/projects/demo-spa/hero-desktop.jpg" alt="Landing page de Bella Vita Spa" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-md);" loading="lazy">
-                        </a>
-                        <p class="project-description">
-                            Landing page de demostración 100% personalizada para un spa/salón de belleza, desarrollada para
-                            RugeDev como muestra comercial de diseño web. Mobile-first, animaciones al hacer scroll, SEO
-                            técnico completo (schema.org, Open Graph, sitemap) y despliegue continuo en Azure Static Web
-                            Apps con GitHub Actions.
-                        </p>
-                        <div class="project-tags">
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">JavaScript Vanilla</span>
-                            <span class="skill-tag">Responsive</span>
-                            <span class="skill-tag">SEO</span>
-                            <span class="skill-tag">Azure Static Web Apps</span>
-                            <span class="skill-tag">CI/CD</span>
-                        </div>
-                        <div class="case-links">
-                            <a href="proyectos/demo-spa.html" class="btn">Ver caso de estudio →</a>
-                            <a href="https://proud-wave-0eb537b0f.azurestaticapps.net/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Demo en vivo ↗</a>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category project-card" name="projects-accordion">
-                    <summary>
-                        <span class="project-header">
-                            <h4>Estética — Sistema de Gestión para Centro de Estética</h4>
-                            <span class="project-badge">Caso de Estudio</span>
-                        </span>
-                        <svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg>
-                    </summary>
-                    <div class="project-panel">
-                        <a href="proyectos/estetica.html">
-                            <img src="assets/Images/projects/estetica/dashboard.jpg" alt="Panel general del sistema de gestión Estética" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-md);" loading="lazy">
-                        </a>
-                        <p class="project-description">
-                            Sistema de gestión integral para un centro de estética: agenda de citas en línea de tiempo,
-                            catálogo de clientes, servicios y productos con control de stock, ventas, compras y gastos,
-                            además de un panel de administración con roles, usuarios y respaldo de base de datos.
-                            Backend en ASP.NET Core 10 (Dapper + SQLite) y frontend en Angular 22 con Material.
-                        </p>
-                        <div class="project-tags">
-                            <span class="skill-tag">.NET Core / ASP.NET Core Web API</span>
-                            <span class="skill-tag">Angular + Angular Material</span>
-                            <span class="skill-tag">Dapper + SQLite</span>
-                            <span class="skill-tag">Argon2id + Cookies HttpOnly</span>
-                            <span class="skill-tag">CSRF + Rate Limiting</span>
-                        </div>
-                        <div class="case-links">
-                            <a href="proyectos/estetica.html" class="btn">Ver caso de estudio →</a>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category project-card" name="projects-accordion">
-                    <summary>
-                        <span class="project-header">
-                            <h4>App Android para Tienda de Abarrotes</h4>
-                            <span class="project-badge project-badge-progress">En Desarrollo · Proyecto Privado</span>
-                        </span>
-                        <svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg>
-                    </summary>
-                    <div class="project-panel">
-                        <p class="project-description">
-                            Aplicación móvil para digitalizar el inventario y las ventas de una tienda de abarrotes:
-                            reconocimiento óptico de caracteres (OCR) para registrar productos, escaneo de código de barras
-                            para agilizar el punto de venta y dictado por voz para registrar pedidos manos-libres.
-                        </p>
-                        <div class="project-tags">
-                            <span class="skill-tag">Android</span>
-                            <span class="skill-tag">Kotlin</span>
-                            <span class="skill-tag">OCR</span>
-                            <span class="skill-tag">Código de Barras</span>
-                            <span class="skill-tag">Reconocimiento de Voz</span>
-                        </div>
-                    </div>
-                </details>
-            </div>
-
-            <p style="text-align: center; margin-top: 1.5rem;">
-                <a href="#contact" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">
-                    ¿Quieres conocer más detalles técnicos de estos proyectos? Escríbeme →
-                </a>
-            </p>
-        </section>
-
-        <!-- Educación -->
-        <section id="education">
-            <h2 class="section-title">Educación</h2>
-
-            <details class="cert-category" name="education-accordion">
-                <summary><span>🎓 Ingeniería de Sistemas</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                <div class="education-panel">
-                    <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
-                        <div>
-                            <p style="font-weight: 600; margin-bottom: 0.5rem;">Corporación Universitaria Remington (Uniremington)</p>
-                            <p style="color: var(--text-muted);">Virtual, Colombia • Graduado</p>
-                        </div>
-                        <div style="text-align: right;">
-                            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
-                                <p style="font-size: 2rem; font-weight: 700; color: var(--primary-color); line-height: 1;">4.20</p>
-                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Promedio Acumulado</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius-md);">
-                        <div style="text-align: center;">
-                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">100%</p>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Carrera Completada</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">145/145</p>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Créditos</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">Aprobado</p>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Proyecto de Grado</p>
-                        </div>
-                        <div style="text-align: center;">
-                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">🎓</p>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Graduado</p>
-                        </div>
-                    </div>
-
-                    <div style="margin-top: 1.5rem;">
-                        <h5 style="color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.1rem;">Áreas de Especialización</h5>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem;">
-                            <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
-                                <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">💾 Bases de Datos</p>
-                                <p style="font-size: 0.85rem; color: var(--text-muted);">Bases de Datos I y II, SQL Server</p>
-                            </div>
-                            <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
-                                <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">🏗️ Ingeniería de Software</p>
-                                <p style="font-size: 0.85rem; color: var(--text-muted);">Desarrollo y arquitectura de software</p>
-                            </div>
-                            <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
-                                <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">💻 Programación Avanzada</p>
-                                <p style="font-size: 0.85rem; color: var(--text-muted);">Lenguajes de programación y algoritmos</p>
-                            </div>
-                            <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-color);">
-                                <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">🌐 Redes y Comunicaciones</p>
-                                <p style="font-size: 0.85rem; color: var(--text-muted);">Sistemas operativos y arquitectura digital</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05)); border-radius: var(--radius-md); border: 1px solid rgba(59, 130, 246, 0.2);">
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            <strong style="color: var(--primary-color);">Formación integral</strong> en desarrollo de software, arquitectura de sistemas,
-                            bases de datos, redes, seguridad informática y metodologías ágiles. Énfasis en desarrollo web,
-                            programación avanzada y proyectos de ingeniería.
-                        </p>
-                    </div>
-                </div>
-            </details>
-
-            <details class="cert-category" name="education-accordion">
-                <summary><span>🏆 Proyecto de Grado</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                <div class="education-panel">
-                    <div style="background: var(--bg-tertiary); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
-                        <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
-                            <div style="flex: 1; min-width: 250px;">
-                                <h6 style="color: var(--primary-color); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">
-                                    Software de Creación de Copias de Seguridad Automáticas
-                                </h6>
-                                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
-                                    Sistema automatizado de respaldo con integración a múltiples plataformas de almacenamiento en la nube,
-                                    diseñado para garantizar la integridad y disponibilidad de datos críticos.
-                                </p>
-                                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
-                                    Este proyecto no se quedó en la entrega académica: lo seguí evolucionando y hoy es
-                                    <strong style="color: var(--primary-color);">BackupPro</strong>, con muchos más motores de
-                                    base de datos y destinos de almacenamiento, cifrado de credenciales y pruebas automatizadas.
-                                    Ver <a href="proyectos/backuppro.html" style="color: var(--primary-color); font-weight: 600;">caso de estudio</a>.
-                                </p>
-                            </div>
-                            <div style="background: rgba(59, 130, 246, 0.1); padding: 0.75rem 1rem; border-radius: var(--radius-sm); text-align: center; border: 1px solid rgba(59, 130, 246, 0.3);">
-                                <p style="font-weight: 700; color: var(--primary-color); font-size: 0.9rem; margin-bottom: 0.25rem;">APROBADO</p>
-                                <p style="font-size: 0.8rem; color: var(--text-muted);">Publicado</p>
-                            </div>
-                        </div>
-
-                        <div style="margin-bottom: 1rem;">
-                            <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem;">Características Técnicas:</p>
-                            <ul style="list-style: none; padding-left: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.5rem;">
-                                <li style="padding: 0.5rem 0; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
-                                    <span style="color: var(--primary-color);">▹</span>
-                                    <strong>Google Drive:</strong> Integración con API de Google
-                                </li>
-                                <li style="padding: 0.5rem 0; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
-                                    <span style="color: var(--primary-color);">▹</span>
-                                    <strong>OneDrive:</strong> Sincronización con Microsoft Cloud
-                                </li>
-                                <li style="padding: 0.5rem 0; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
-                                    <span style="color: var(--primary-color);">▹</span>
-                                    <strong>Azure Blob Storage:</strong> Almacenamiento en nube empresarial
-                                </li>
-                                <li style="padding: 0.5rem 0; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
-                                    <span style="color: var(--primary-color);">▹</span>
-                                    <strong>FTP:</strong> Transferencia segura de archivos
-                                </li>
-                                <li style="padding: 0.5rem 0; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
-                                    <span style="color: var(--primary-color);">▹</span>
-                                    <strong>Local:</strong> Respaldos en disco local
-                                </li>
-                                <li style="padding: 0.5rem 0; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem;">
-                                    <span style="color: var(--primary-color);">▹</span>
-                                    <strong>Automatización:</strong> Programación de respaldos
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                            <span style="background: var(--bg-secondary); color: var(--primary-color); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.85rem; border: 1px solid var(--primary-color);">.NET</span>
-                            <span style="background: var(--bg-secondary); color: var(--primary-color); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.85rem; border: 1px solid var(--primary-color);">Azure Blob Storage</span>
-                            <span style="background: var(--bg-secondary); color: var(--primary-color); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.85rem; border: 1px solid var(--primary-color);">Google Drive API</span>
-                            <span style="background: var(--bg-secondary); color: var(--primary-color); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.85rem; border: 1px solid var(--primary-color);">OneDrive API</span>
-                            <span style="background: var(--bg-secondary); color: var(--primary-color); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.85rem; border: 1px solid var(--primary-color);">FTP</span>
-                            <span style="background: var(--bg-secondary); color: var(--primary-color); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.85rem; border: 1px solid var(--primary-color);">Automatización</span>
-                        </div>
-
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-                            <a href="proyectos/proyecto-grado.html" class="repo-link"
-                               style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary-color); color: white; padding: 0.75rem 1.25rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: var(--shadow-md);">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 1.25rem; height: 1.25rem;">
-                                    <path fill-rule="evenodd" d="M12 4.5C7.305 4.5 3.135 7.283 1.5 12c1.635 4.717 5.805 7.5 10.5 7.5s8.865-2.783 10.5-7.5C20.865 7.283 16.695 4.5 12 4.5zm0 12.5a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z" clip-rule="evenodd" />
-                                </svg>
-                                Ver Documento (Visor)
-                            </a>
-                            <a href="https://repositorio.uniremington.edu.co/handle/123456789/8679" target="_blank" rel="noopener noreferrer" class="repo-link"
-                               style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bg-secondary); color: var(--primary-color); border: 1px solid var(--primary-color); padding: 0.75rem 1.25rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s ease, box-shadow 0.2s ease;">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 1.25rem; height: 1.25rem;">
-                                    <path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
-                                </svg>
-                                Ver Publicación en Repositorio Universitario
-                            </a>
-                            <a href="proyectos/backuppro.html" class="repo-link"
-                               style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bg-secondary); color: var(--primary-color); border: 1px solid var(--primary-color); padding: 0.75rem 1.25rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s ease, box-shadow 0.2s ease;">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 1.25rem; height: 1.25rem;">
-                                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75 0 4.309 2.795 7.965 6.675 9.255.488.09.665-.213.665-.473 0-.233-.008-.85-.013-1.668-2.716.59-3.289-1.31-3.289-1.31-.444-1.128-1.084-1.428-1.084-1.428-.886-.605.067-.593.067-.593.98.069 1.496 1.007 1.496 1.007.87 1.492 2.286 1.06 2.842.81.087-.63.34-1.06.618-1.303-2.168-.247-4.448-1.084-4.448-4.824 0-1.066.38-1.938 1.005-2.62-.101-.247-.436-1.24.096-2.583 0 0 .82-.263 2.688 1.001a9.36 9.36 0 012.448-.329c.83.004 1.667.112 2.448.329 1.867-1.264 2.686-1.001 2.686-1.001.533 1.343.198 2.336.097 2.583.627.682 1.004 1.554 1.004 2.62 0 3.75-2.284 4.573-4.46 4.815.35.301.662.895.662 1.803 0 1.302-.012 2.352-.012 2.671 0 .262.175.567.67.471C19.207 19.965 22 16.31 22 12c0-5.385-4.365-9.75-9.75-9.75-.083 0-.166 0-.25.002z" clip-rule="evenodd" />
-                                </svg>
-                                Ver Evolución: BackupPro →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </details>
-        </section>
-
-        <!-- Certificaciones -->
-        <section id="certifications">
-            <h2 class="section-title">Certificaciones & Cursos</h2>
-            <p style="text-align: center; color: var(--primary-color); font-weight: 600; margin-bottom: 1.5rem;">
-                113 Certificaciones en Platzi
-            </p>
-
-            <div class="certifications-container">
-                <details class="cert-category" name="cert-accordion">
-                    <summary><span>🎯 C# y .NET</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <div class="certifications-grid">
-                        <div class="card certification-item">
-                            <h4>Curso de Principios SOLID en C# y .NET</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Buenas Prácticas y Código Limpio en C#</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de APIs con .NET</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Fundamentos de Entity Framework</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Programación Orientada a Objetos con C#</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Manejo de Datos en C# con LINQ</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Fundamentos de .NET</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso Básico de Programación con C#</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category" name="cert-accordion">
-                    <summary><span>💻 JavaScript y Frontend</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <div class="certifications-grid">
-                        <div class="card certification-item">
-                            <h4>Curso Práctico de Frontend Developer</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Frontend Developer</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso Definitivo de HTML y CSS</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso Práctico de HTML y CSS</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Responsive Design: Maquetación Mobile First</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso Práctico de JavaScript</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso Básico de JavaScript</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Closures y Scope en JavaScript</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category" name="cert-accordion">
-                    <summary><span>🗄️ Bases de Datos y Backend</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <div class="certifications-grid">
-                        <div class="card certification-item">
-                            <h4>Curso de Optimización de Bases de Datos en SQL Server</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Fundamentos de Bases de Datos</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Introducción al Desarrollo Backend</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso Básico de Python</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso Básico de PHP</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category" name="cert-accordion">
-                    <summary><span>☁️ DevOps, Git y Cloud</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <div class="certifications-grid">
-                        <div class="card certification-item">
-                            <h4>Curso Profesional de Git y GitHub</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Git y GitHub</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Introducción a DevOps</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Introducción al Despliegue de Aplicaciones</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Introducción a la Nube</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category" name="cert-accordion">
-                    <summary><span>🏗️ Arquitectura y Mejores Prácticas</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <div class="certifications-grid">
-                        <div class="card certification-item">
-                            <h4>Fundamentos de Arquitectura de Software</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Audiocurso de Fundamentos de Arquitectura de Alta Concurrencia</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Fundamentos de Ingeniería de Software</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Seguridad Informática para Equipos Técnicos</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category" name="cert-accordion">
-                    <summary><span>📱 Desarrollo Mobile</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <div class="certifications-grid">
-                        <div class="card certification-item">
-                            <h4>Curso de Kotlin desde Cero</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso Básico de Diseño de Interfaces con Android Studio</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category" name="cert-accordion">
-                    <summary><span>📊 Metodologías Ágiles y Product Management</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <div class="certifications-grid">
-                        <div class="card certification-item">
-                            <h4>Curso Profesional de Scrum</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Fundamentos de Product Owner</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Audiocurso de Fundamentos para Product Managers</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Trello</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category" name="cert-accordion">
-                    <summary><span>🎨 UX/UI y Diseño</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <div class="certifications-grid">
-                        <div class="card certification-item">
-                            <h4>Curso de Fundamentos de Diseño de Interfaces UX/UI</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Metodologías de Diseño de Productos Digitales</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                    </div>
-                </details>
-
-                <details class="cert-category" name="cert-accordion">
-                    <summary><span>💡 Soft Skills y Desarrollo Profesional</span><svg class="cert-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" /></svg></summary>
-                    <div class="certifications-grid">
-                        <div class="card certification-item">
-                            <h4>Curso de Fundamentos de Liderazgo</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Habilidades Blandas para el Desarrollo Profesional</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Inteligencia Emocional</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Comunicación Asertiva</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso de Gestión Efectiva del Tiempo</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                        <div class="card certification-item">
-                            <h4>Curso para Identificar y Vencer el Síndrome del Impostor</h4>
-                            <p class="certification-issuer">Platzi</p>
-                        </div>
-                    </div>
-                </details>
-
-                <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--bg-tertiary); border-radius: var(--radius-lg);">
-                    <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
-                        Y 50+ certificaciones adicionales en áreas de pensamiento lógico, algoritmos,
-                        finanzas personales, idiomas y desarrollo personal.
-                    </p>
-                    <a href="https://platzi.com/p/ismaelruge/" target="_blank" rel="noopener noreferrer"
-                       style="display: inline-block; margin-top: 1rem; color: var(--primary-color); text-decoration: none; font-weight: 600;">
-                        Ver perfil completo en Platzi →
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Idiomas -->
-        <section id="languages">
-            <h2 class="section-title">Idiomas</h2>
-            <div class="languages-grid">
-                <div class="card language-item">
-                    <h4>Español</h4>
-                    <p class="language-level">Nativo</p>
-                    <div class="language-progress">
-                        <div class="language-progress-bar" data-width="100%" style="width: 0%;"></div>
-                    </div>
-                </div>
-
-                <div class="card language-item">
-                    <h4>Inglés</h4>
-                    <p class="language-level">Intermedio (B1)</p>
-                    <div class="language-progress">
-                        <div class="language-progress-bar" data-width="55%" style="width: 0%;"></div>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
-                        Comunicación y documentación técnica en entornos profesionales
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contacto -->
-        <section id="contact">
-            <h2 class="section-title">Contacto</h2>
-            <div class="card">
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required placeholder="Tu nombre">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" required placeholder="Cuéntame sobre tu proyecto o propuesta..."></textarea>
-                    </div>
-
-                    <!-- Campo trampa anti-spam, oculto para personas -->
-                    <input type="text" name="_honey" class="honeypot-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-                    <button type="submit" class="btn btn-block">Enviar Mensaje</button>
-                </form>
-            </div>
-        </section>
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+<header class="site-header">
+  <nav class="navigation wrap" aria-label="Navegación principal">
+    <a class="brand" href="#hero" aria-label="Ismael Ruge, inicio"><span class="brand-mark" aria-hidden="true">ir.</span><span>Ismael Ruge<span class="brand-caption">Software engineer</span></span></a>
+    <div class="nav-menu" id="nav-menu">
+      <a class="nav-link" href="#services">Servicios</a><a class="nav-link" href="#projects">Proyectos</a><a class="nav-link" href="#experience">Experiencia</a><a class="nav-link" href="#about">Sobre mí</a>
+      <a class="nav-link nav-contact" href="#contact">Hablemos <span aria-hidden="true">↗</span></a>
     </div>
-    </main>
+    <div class="nav-actions">
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Activar tema oscuro" aria-pressed="false"><svg id="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14A8.5 8.5 0 0 1 10 4 8.5 8.5 0 1 0 20 14Z"/></svg><svg id="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/></svg></button>
+      <button class="menu-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu" hidden>Menú <span aria-hidden="true">☰</span></button>
+    </div>
+  </nav>
+</header>
+<main id="main-content" tabindex="-1">
+  <section class="hero wrap" id="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Ingeniería de software · Colombia / Remoto</p>
+      <h1 id="hero-title">Tu negocio tiene un reto.<br><em>Construyamos la solución.</em></h1>
+      <p class="hero-intro">Soy Ismael Ruge, ingeniero de sistemas y desarrollador senior. Creo software a medida, conecto sistemas y convierto procesos complejos en herramientas útiles para tu equipo.</p>
+      <div class="actions"><a class="button button-primary" href="#contact">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a><a class="text-link" href="#projects">Explorar mi trabajo <span aria-hidden="true">↓</span></a></div>
+      <p class="recruiter-link">¿Buscas talento para tu equipo? <a href="#experience">Conoce mi experiencia <span aria-hidden="true">→</span></a></p>
+    </div>
+    <div class="hero-visual">
+      <div class="portrait-panel">
+        <div class="portrait-caption"><span>DETRÁS DEL CÓDIGO</span><span aria-hidden="true">01 / IR</span></div>
+        <img class="portrait" src="assets/Images/Profile.png" alt="Ismael Ruge Gonzalez, ingeniero de sistemas" width="440" height="440" fetchpriority="high">
+        <div class="portrait-footer"><div><strong>Ismael Ruge</strong><span>Senior Backend / Fullstack</span></div><span class="portrait-arrow" aria-hidden="true">↗</span></div>
+      </div>
+      <div class="expertise-note"><span class="note-icon" aria-hidden="true">&lt;/&gt;</span><div><strong>Software que conecta.</strong><span>.NET · Angular · Azure</span></div></div>
+    </div>
+  </section>
+  <div class="proof-strip">
+    <dl class="wrap proof-grid">
+      <div><dt>4+ años</dt><dd>Construyendo soluciones empresariales</dd></div>
+      <div><dt>Salud &amp; negocios</dt><dd>Experiencia en procesos críticos</dd></div>
+      <div><dt>Integración regional</dt><dd>Colombia, México y Ecuador</dd></div>
+    </dl>
+  </div>
 
-    <!-- Botón volver arriba -->
-    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V7.06l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z" clip-rule="evenodd" />
-        </svg>
-    </button>
+  <section class="section wrap" id="services" aria-labelledby="services-title">
+    <div class="section-heading"><div><p class="eyebrow">01 / CÓMO PUEDO AYUDARTE</p><h2 id="services-title">De una necesidad real<br>a una solución que funciona.</h2></div><p>Desde una web para presentar tu negocio hasta el sistema que sostiene tu operación.</p></div>
+    <div class="service-grid">
+      <article class="service-card"><span class="service-number">01</span><h3>Software para tu operación</h3><p>Centraliza ventas, inventario, citas o tareas internas en una aplicación adaptada a la forma en que trabaja tu negocio.</p><ul class="plain-list"><li>Aplicaciones web a medida</li><li>Paneles de gestión y administración</li><li>Automatización de procesos</li></ul><a class="text-link" href="#contact" data-inquiry="Software a medida">Cuéntame qué necesitas <span aria-hidden="true">↗</span></a></article>
+      <article class="service-card"><span class="service-number">02</span><h3>Sistemas que se entienden</h3><p>Conecta aplicaciones, bases de datos y servicios para que la información llegue donde se necesita, con trazabilidad.</p><ul class="plain-list"><li>Integraciones y APIs</li><li>Optimización de rendimiento</li><li>Interoperabilidad de sistemas</li></ul><a class="text-link" href="#contact" data-inquiry="Integraciones y optimización">Conversemos sobre tu reto <span aria-hidden="true">↗</span></a></article>
+      <article class="service-card"><span class="service-number">03</span><h3>Una web para tu negocio</h3><p>Presenta tus servicios con claridad y facilita que tus próximos clientes te encuentren, conozcan tu trabajo y te contacten.</p><ul class="plain-list"><li>Sitios web y landing pages</li><li>Diseño adaptable a móviles</li><li>SEO técnico y despliegue</li></ul><a class="text-link" href="#contact" data-inquiry="Sitio web para mi negocio">Hablemos de tu sitio <span aria-hidden="true">↗</span></a></article>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Ismael Ruge Gonzalez. Todos los derechos reservados.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-            Hecho con 💙 usando HTML, CSS y JavaScript · Código fuente bajo licencia
-            <a href="LICENSE" style="color: inherit; text-decoration: underline;">MIT</a>
-        </p>
-    </footer>
+  <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">02 / TRABAJO SELECCIONADO</p><h2 id="projects-title">Más que código.<br>Soluciones con contexto.</h2></div><p>Explora el problema, las decisiones técnicas y el resultado de cada proyecto.</p></div>
+      <article class="featured-project">
+        <a class="project-image featured-image" href="proyectos/backuppro.html" aria-label="Explorar el caso de estudio de BackupPro"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>BackupPro / Panel de control</span></div><img src="assets/Images/projects/backuppro/dashboard.jpg" alt="Panel de BackupPro para gestionar bases de datos, tareas y respaldos" width="1440" height="900" loading="lazy" decoding="async"></a>
+        <div class="project-copy"><p class="eyebrow">PROYECTO DESTACADO · CÓDIGO ABIERTO</p><h3>BackupPro</h3><p class="project-lead">Las copias de seguridad, bajo control.</p><p>Una aplicación para centralizar y programar respaldos de bases de datos hacia distintos destinos de almacenamiento. De proyecto de grado a una herramienta en evolución.</p><ul class="project-facts"><li>7 motores de base de datos y 7 destinos</li><li>Programación, retención y restauración con auditoría</li><li>Credenciales cifradas y pruebas automatizadas</li></ul><div class="tags"><span>.NET</span><span>Entity Framework</span><span>Azure</span></div><div class="actions"><a class="button button-primary" href="proyectos/backuppro.html">Ver caso de estudio <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/ismaelruge/BackupPro" target="_blank" rel="noopener noreferrer">Código fuente <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <div class="project-grid">
+        <article class="project-card"><a class="project-image" href="proyectos/estetica.html" aria-label="Explorar el caso de estudio de Estética"><img src="assets/Images/projects/estetica/dashboard.jpg" alt="Panel del sistema Estética con ingresos, gastos y agenda" width="1440" height="900" loading="lazy" decoding="async"></a><div class="project-card-body"><p class="eyebrow">APLICACIÓN DE GESTIÓN · CÓDIGO PRIVADO</p><h3>Estética</h3><p>Citas, clientes, inventario y ventas en un mismo lugar. Un sistema para organizar el día a día de un centro de estética.</p><div class="tags"><span>Angular</span><span>.NET Web API</span><span>SQLite</span></div><a class="text-link" href="proyectos/estetica.html">Conocer la solución <span aria-hidden="true">↗</span></a></div></article>
+        <article class="project-card"><a class="project-image spa-image" href="proyectos/demo-spa.html" aria-label="Explorar el caso de estudio de Bella Vita Spa"><img src="assets/Images/projects/demo-spa/hero-desktop.jpg" alt="Página de presentación de la demo Bella Vita Spa" width="1440" height="900" loading="lazy" decoding="async"></a><div class="project-card-body"><p class="eyebrow">DISEÑO WEB · DEMO COMERCIAL</p><h3>Bella Vita Spa</h3><p>Una muestra de cómo presentar un negocio de belleza, comunicar sus servicios y facilitar el contacto para agendar una cita.</p><div class="tags"><span>Diseño responsive</span><span>SEO</span><span>Azure</span></div><div class="actions"><a class="text-link" href="proyectos/demo-spa.html">Ver caso de estudio <span aria-hidden="true">↗</span></a><a class="text-link" href="https://proud-wave-0eb537b0f.azurestaticapps.net/" target="_blank" rel="noopener noreferrer">Abrir demo <span aria-hidden="true">↗</span></a></div></div></article>
+      </div>
+      <div class="in-progress"><span class="label">EN DESARROLLO</span><p><strong>App Android para tiendas de abarrotes.</strong> Inventario y ventas con OCR, escaneo de códigos de barras y reconocimiento de voz.</p><span class="small-note">Kotlin · Proyecto privado</span></div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+  <section class="section wrap" id="experience" aria-labelledby="experience-title">
+    <div class="section-heading"><div><p class="eyebrow">03 / EXPERIENCIA QUE APORTO A TU EQUIPO</p><h2 id="experience-title">Criterio técnico.<br>Visión de negocio.</h2></div><a class="button button-secondary" href="assets/CV-IsmaelRuge.pdf" download>Descargar CV <span aria-hidden="true">↓</span></a></div>
+    <div class="experience-layout">
+      <aside class="experience-intro"><p>Mi especialidad está en el backend: sistemas que integran información, soportan procesos críticos y necesitan seguir funcionando bajo carga.</p><p>También desarrollo la experiencia completa, desde la base de datos hasta la interfaz que usa el equipo.</p><a class="text-link" href="https://www.linkedin.com/in/ismaelruge" target="_blank" rel="noopener noreferrer">Conectar en LinkedIn <span aria-hidden="true">↗</span></a></aside>
+      <div class="experience-list">
+        <article class="experience-item"><div class="job-heading"><h3>COLCAN</h3><span class="label">ACTUAL</span></div><p class="job-role">Desarrollador Senior Backend / Fullstack</p><p class="job-date">Diciembre 2023 — Actualidad · Remoto</p><p>Lidero el desarrollo de un sistema de gestión de casos y resultados de patología, con decisiones de arquitectura y coordinación técnica.</p><ul class="impact-list"><li>Diseño de un Bus de Datos que amplió la interoperabilidad con clientes en México y Ecuador.</li><li>Coordinación de hasta 3 desarrolladores, revisión de código y aprobación de pull requests.</li><li>Optimización de procesos de minutos a segundos, con caché, control de concurrencia y reintentos.</li></ul><div class="tags"><span>.NET</span><span>Angular</span><span>SQL Server</span><span>MongoDB</span><span>Redis</span></div></article>
+        <article class="experience-item"><div class="job-heading"><h3>HAS SQL S.A.S.</h3></div><p class="job-role">Desarrollador Backend / Fullstack</p><p class="job-date">Marzo 2022 — Diciembre 2023 · Duitama</p><p>Desarrollo de soluciones administrativas, contables y tributarias para entes gubernamentales, desde interfaces web hasta servicios backend y configuración de servidores.</p><div class="tags"><span>.NET</span><span>SQL Server</span><span>JavaScript</span><span>IIS</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section approach-section">
+    <div class="wrap"><div class="section-heading"><div><p class="eyebrow">04 / FORMA DE TRABAJAR</p><h2>Primero entender.<br>Después construir.</h2></div><p>Una conversación clara desde el inicio para tomar mejores decisiones durante el desarrollo.</p></div>
+      <ol class="process-grid"><li><span class="process-number">01</span><h3>Entendemos el reto</h3><p>Conversamos sobre tu operación, las personas que usarán la solución y el problema que vale la pena resolver.</p></li><li><span class="process-number">02</span><h3>Definimos el alcance</h3><p>Acordamos prioridades, funcionalidades y entregables para tener una dirección compartida.</p></li><li><span class="process-number">03</span><h3>Construimos y revisamos</h3><p>Desarrollamos por etapas, revisamos los avances y validamos la solución con escenarios de uso reales.</p></li></ol>
+    </div>
+  </section>
+
+  <section class="section wrap" id="about" aria-labelledby="about-title">
+    <div class="about-grid"><div><p class="eyebrow">05 / UN POCO SOBRE MÍ</p><h2 id="about-title">La tecnología tiene sentido<br>cuando le sirve a alguien.</h2><p class="about-lead">Soy Ismael, ingeniero de sistemas en Yopal, Colombia. Me interesa entender cómo funciona un negocio y construir herramientas que hagan su trabajo más sencillo.</p><p>Mi experiencia en el sector salud me ha llevado a trabajar con interoperabilidad, información crítica y sistemas en producción. Busco aportar ese criterio a nuevos proyectos y equipos.</p><p>Me motiva seguir creciendo en liderazgo técnico, compartir lo que aprendo y trabajar con personas que valoran la calidad y la comunicación.</p><div class="language-line"><span>Español · Nativo</span><span>Inglés · Intermedio B1</span></div></div>
+      <div class="credentials"><article id="education"><p class="eyebrow">FORMACIÓN</p><h3>Ingeniería de Sistemas</h3><p>Corporación Universitaria Remington</p><span class="small-note">Graduado · Promedio 4.20 / 5.0</span><a class="text-link" href="proyectos/proyecto-grado.html">Ver proyecto de grado <span aria-hidden="true">↗</span></a></article><article id="certifications"><p class="eyebrow">APRENDIZAJE CONTINUO</p><h3>113 cursos y certificaciones</h3><p>Formación en .NET, arquitectura, bases de datos, desarrollo web y liderazgo.</p><a class="text-link" href="https://platzi.com/p/ismaelruge/" target="_blank" rel="noopener noreferrer">Ver formación en Platzi <span aria-hidden="true">↗</span></a></article></div>
+    </div>
+    <div class="stack-section" id="skills"><p class="eyebrow">HERRAMIENTAS CON LAS QUE CONSTRUYO</p><ul class="stack-list"><li>C# / .NET</li><li>Angular</li><li>SQL Server</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>Azure</li><li>Docker</li></ul></div>
+  </section>
+
+  <section class="contact-section" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid"><div class="contact-copy"><p class="eyebrow">EL SIGUIENTE PASO</p><h2 id="contact-title">¿Qué te gustaría<br>construir?</h2><p>Cuéntame sobre tu negocio, una idea que quieras desarrollar o una oportunidad en tu equipo.</p><a class="contact-email" href="mailto:ismaelruge@gmail.com">ismaelruge@gmail.com <span aria-hidden="true">↗</span></a><div class="contact-links"><a href="https://www.linkedin.com/in/ismaelruge" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/ismaelruge" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="tel:+573134112918">+57 313 411 2918</a></div><p class="contact-location">Yopal, Colombia · Colaboración remota</p></div>
+      <form id="contact-form" class="contact-form" action="https://formsubmit.co/ismaelruge@gmail.com" method="POST">
+        <h3>Iniciemos una conversación</h3>
+        <div class="form-row"><div class="form-group"><label for="name">Tu nombre</label><input id="name" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="¿Cómo te llamas?"></div><div class="form-group"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="tu@empresa.com"></div></div>
+        <div class="form-group"><label for="interest">¿En qué puedo ayudarte?</label><select id="interest" name="interest"><option value="Software a medida">Software a medida</option><option value="Integraciones y optimización">Integraciones y optimización</option><option value="Sitio web para mi negocio">Sitio web para mi negocio</option><option value="Oportunidad laboral">Oportunidad laboral</option><option value="Otra consulta">Otra consulta</option></select></div>
+        <div class="form-group"><label for="message">Cuéntame un poco más</label><textarea id="message" name="message" required minlength="10" maxlength="5000" rows="4" placeholder="¿Qué necesitas resolver o qué oportunidad tienes en mente?"></textarea></div>
+        <input class="honeypot-field" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="Nuevo contacto desde el portafolio">
+        <button class="button button-primary" type="submit">Enviar mensaje <span aria-hidden="true">↗</span></button>
+        <p class="form-note">Tu mensaje se envía a mi correo mediante FormSubmit. También puedes escribirme directamente.</p>
+        <p class="form-message" id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="wrap footer-content"><a class="brand" href="#hero"><span class="brand-mark" aria-hidden="true">ir.</span><span>Ismael Ruge</span></a><p>Ingeniería para ideas que merecen hacerse realidad.</p><span>© 2026 Ismael Ruge</span></div></footer>
+<script src="script.js" defer></script>
 </body>
 </html>

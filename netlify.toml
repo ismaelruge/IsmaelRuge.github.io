@@ -1,0 +1,4 @@
+# Separate review deployment; GitHub Pages continues publishing master.
+[build]
+  command = "python3 scripts/build_site.py --preview"
+  publish = "dist"
